@@ -14,8 +14,9 @@
             <h1 class="subtitle">{{ staking.stake }}</h1>
             <h1 class="title">In Staking</h1>
           </div>
-          <div class="column">
-            <h1 class="subtitle">{{ interest }}</h1>
+          <div class="column" v-if="staking.stake">
+            <h1 class="subtitle" v-if="staking.stake > 0">{{ interest }}</h1>
+            <h1 class="subtitle" v-if="staking.stake == 0">Nothing in stake</h1>
             <h1 class="title">Interest</h1>
           </div>
         </div>
