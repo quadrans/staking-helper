@@ -1,85 +1,92 @@
 <template>
+<div id="blueRowMap">
   <div class="container">
     <div class="box">
       <div v-if="account">
         <div style="text-align: left">
-          Welcome back:<br />
-          {{ account }}
+          <h3><strong>Welcome back:</strong><br>
+          <p>{{ account }}</p></h3>
         </div>
         <hr />
         <div class="columns">
           <div class="column">
-            <h1 class="subtitle">{{ qdt_balance }}</h1>
-            <h1 class="title">QDT Balance</h1>
+            <h3 class="title">QDT Balance</h3>
+            <p>{{ qdt_balance }}</p>
           </div>
           <div class="column">
-            <h1 class="subtitle">{{ staking_qdt }}</h1>
-            <h1 class="title">In Staking</h1>
+            <h3 class="title">In Staking</h3>
+            <p>{{ staking_qdt }}</p>
           </div>
           <div class="column" v-if="staking.stake">
-            <h1 class="subtitle" v-if="staking.stake > 0">{{ interest }}</h1>
-            <h1 class="subtitle" v-if="staking.stake == 0">Nothing in stake</h1>
-            <h1 class="title">Interest</h1>
+            <h3 class="title">Interest</h3>
+            <p v-if="staking.stake > 0">{{ interest }}</p>
+            <p v-if="staking.stake == 0">Nothing in stake</p>
           </div>
         </div>
         <hr />
         <div class="columns">
           <div class="column" v-if="staking_qdt === 0">
-            <h1 class="title">Stake</h1>
-            <b-input
-              placeholder="Write the amount to stake here (min. 10000 QDT)"
-              rounded
-              min="10000"
-              type="number"
-              v-model="toStake"
-            ></b-input
-            ><br />
-            <b-button
-              v-if="toStake <= qdt_balance && !isApproving && !isStaking"
-              type="is-primary"
-              v-on:click="stake"
-              >STAKE</b-button
-            >
+            <h3 class="title">Stake</h3>
+              <b-input
+                placeholder="Write the amount to stake here (min. 10000 QDT)"
+                min="10000"
+                type="number"
+                v-model="toStake"
+              ></b-input
+              >
+              <b-button
+                v-if="toStake <= qdt_balance && !isApproving && !isStaking"
+                type="fill"
+                v-on:click="stake"
+                >STAKE</b-button
+              >
             <div v-if="isApproving">
-              Please approve following transaction in order to stake the tokens
-              and wait until confirmed...
+              <b-message type="is-warning" aria-close-label="Close message">
+                Please approve following transaction in order to stake the tokens and wait until confirmed...
+              </b-message>
             </div>
             <div v-if="isStaking">
-              Please onfirm the <b>staking transaction</b> and wait until the
-              transaction is confirmed...
+              <b-message type="is-info" aria-close-label="Close message">
+                Please confirm the <b>staking transaction</b> and wait until the transaction is confirmed...
+              </b-message>
             </div>
-            <div style="color: #f00" v-if="toStake > qdt_balance">
-              Can't stake more than your balance!
+            <div v-if="toStake > qdt_balance">
+              <b-message type="is-danger" aria-close-label="Close message">
+                Can't stake more than your balance!
+              </b-message>
             </div>
           </div>
           <div class="column" v-if="staking_qdt > 0">
-            <h1 class="title">Withdraw</h1>
+            <h3 class="title">Withdraw</h3>
             <div style="line-height: 35px; padding-top: 5px">
-              You will withdraw all the tokens + reward.
+              <p>You will withdraw all the tokens + reward.</p>
             </div>
             <br />
             <b-button
-              type="is-primary"
+              type="fill"
               v-if="!isWithdrawing"
               v-on:click="withdraw"
+              style="margin-top: 50px !important;"
               >WITHDRAW</b-button
             >
             <div v-if="isWithdrawing">
-              Please confirm the <b>withdraw transaction</b> and wait until is
-              confirmed...
+              <b-message type="is-info" aria-close-label="Close message">
+                Please confirm the <b>withdraw transaction</b> and wait until is confirmed...
+              </b-message>
             </div>
           </div>
         </div>
       </div>
       <div v-if="!account">
-        Please connect your Metamask wallet first,<br />window should be open
-        automatically or click below button.<br /><br />
-        <b-button type="is-primary" v-on:click="connect"
+        <h3 class="title">Connect your wallet to Quadrans Staking Platform</h3>
+        <p>Please connect your Metamask wallet first,<br />window should be open automatically or click below button.</p>
+        <b-button type="fill" style="margin-top: 50px !important;" v-on:click="connect"
           >CONNECT METAMASK</b-button
         >
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
