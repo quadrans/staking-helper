@@ -13,7 +13,7 @@
             <h1 class="title">QDT Balance</h1>
           </div>
           <div class="column">
-            <h1 class="subtitle">{{ staking.stake }}</h1>
+            <h1 class="subtitle">{{ staking_qdt }}</h1>
             <h1 class="title">In Staking</h1>
           </div>
           <div class="column" v-if="staking.stake">
@@ -24,7 +24,7 @@
         </div>
         <hr />
         <div class="columns">
-          <div class="column">
+          <div class="column" v-if="staking_qdt === 0">
             <h1 class="title">Stake</h1>
             <b-input
               placeholder="Write the amount to stake here (min. 10000 QDT)"
@@ -34,18 +34,40 @@
               v-model="toStake"
             ></b-input
             ><br />
-            <b-button v-if="toStake <= qdt_balance" type="is-primary" v-on:click="stake">STAKE</b-button>
-            <div style="color:#f00" v-if="toStake > qdt_balance">Can't stake more than your balance!</div>
+            <b-button
+              v-if="toStake <= qdt_balance && !isApproving && !isStaking"
+              type="is-primary"
+              v-on:click="stake"
+              >STAKE</b-button
+            >
+            <div v-if="isApproving">
+              Please approve following transaction in order to stake the tokens
+              and wait until confirmed...
+            </div>
+            <div v-if="isStaking">
+              Please onfirm the <b>staking transaction</b> and wait until the
+              transaction is confirmed...
+            </div>
+            <div style="color: #f00" v-if="toStake > qdt_balance">
+              Can't stake more than your balance!
+            </div>
           </div>
-          <div class="column">
+          <div class="column" v-if="staking_qdt > 0">
             <h1 class="title">Withdraw</h1>
             <div style="line-height: 35px; padding-top: 5px">
               You will withdraw all the tokens + reward.
             </div>
             <br />
-            <b-button type="is-primary" v-on:click="withdraw"
+            <b-button
+              type="is-primary"
+              v-if="!isWithdrawing"
+              v-on:click="withdraw"
               >WITHDRAW</b-button
             >
+            <div v-if="isWithdrawing">
+              Please confirm the <b>withdraw transaction</b> and wait until is
+              confirmed...
+            </div>
           </div>
         </div>
       </div>
@@ -75,7 +97,12 @@ export default {
       qdt_balance: 0,
       staking_balance: 0,
       toStake: "",
+      isApproving: false,
+      isStaking: false,
+      isWithdrawing: false,
+      isLoading: true,
       interest: 0,
+      staking_qdt: 0,
       abi_qdt: ABI_QDT,
       abi_staking: ABI_STAKING,
       qdt_contract: {},
@@ -124,6 +151,9 @@ export default {
           let accounts = await app.web3.eth.getAccounts();
           app.account = accounts[0];
           app.getinfo();
+          setInterval(function(){
+            app.getinfo();
+          }, 15000)
         } catch (e) {
           console.log(e.message);
         }
@@ -153,8 +183,32 @@ export default {
         .call();
       // Getting interest from Staking Contract
       if (app.staking.stake > 0) {
-        app.interest = await app.staking_contract.methods.getInterest().call();
+        app.staking_qdt = app.web3.utils.fromWei(app.staking.stake);
+        app.interest = await app.staking_contract.methods
+          .getInterest()
+          .call({ from: app.account });
         app.interest = app.web3.utils.fromWei(app.interest);
+      }
+    },
+    async approve() {
+      const app = this;
+      if (app.qdt_balance >= app.toStake && app.toStake >= 10000) {
+        let toStake = app.web3.utils.toWei(app.toStake);
+        try {
+          app.isApproving = true;
+          await app.qdt_contract.methods
+            .approve(app.staking_address, toStake)
+            .send({
+              from: app.account,
+            });
+          app.isApproving = false;
+          app.stake();
+        } catch (e) {
+          app.isApproving = false;
+          alert(e.message);
+        }
+      } else {
+        alert("Can't stake less than 10000 QDT");
       }
     },
     async stake() {
@@ -162,11 +216,23 @@ export default {
       if (app.qdt_balance >= app.toStake && app.toStake >= 10000) {
         let toStake = app.web3.utils.toWei(app.toStake);
         try {
-          let staked = await app.staking_contract.methods
-            .stake(toStake)
-            .send({ from: app.account });
-          console.log(staked);
+          let allowance = await app.qdt_contract.methods
+            .allowance(app.account, app.staking_address)
+            .call();
+          let fixed = app.web3.utils.toWei(allowance);
+          if (fixed >= toStake) {
+            app.isStaking = true;
+            await app.staking_contract.methods
+              .stake(toStake)
+              .send({ from: app.account });
+            app.isStaking = false;
+            alert("Staking successful!");
+            app.getinfo();
+          } else {
+            app.approve();
+          }
         } catch (e) {
+          app.isStaking = false;
           alert(e.message);
         }
       } else {
@@ -176,11 +242,16 @@ export default {
     async withdraw() {
       const app = this;
       try {
+        app.isWithdrawing = true;
         let withdrew = await app.staking_contract.methods
           .withdraw()
           .send({ from: app.account });
-        console.log(withdrew);
+        setTimeout(function () {
+          app.getinfo();
+        }, 500);
+        app.isWithdrawing = false;
       } catch (e) {
+        app.isWithdrawing = false;
         alert(e.message);
       }
     },
