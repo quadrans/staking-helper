@@ -14,7 +14,7 @@
             <b-navbar-item href="/">
                 Home
             </b-navbar-item>
-            <b-navbar-item href="/about">
+            <b-navbar-item tag="router-link" to="/about">
                 How it works
             </b-navbar-item>
             <b-navbar-dropdown label="Network">
@@ -76,6 +76,13 @@ html, body, h1, h2, h3, h4, h5, h6, button, input, optgroup, select, textarea {
 /* TYPO STYLE START*/
 
 p {
+  font-size: 0.9rem !important;
+  line-height: 1.9rem !important;
+  color: #16173D !important;
+  font-weight: 400;
+}
+
+p.staking {
   font-size: 1.1rem !important;
   line-height: 1.9rem !important;
   color: #16173D !important;

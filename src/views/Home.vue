@@ -5,22 +5,22 @@
       <div v-if="account">
         <div style="text-align: left">
           <h3><strong>Welcome back:</strong><br>
-          <p>{{ account }}</p></h3>
+          <p class="staking">{{ account }}</p></h3>
         </div>
         <hr />
         <div class="columns">
           <div class="column">
             <h3 class="title">QDT Balance</h3>
-            <p>{{ qdt_balance }} QDT</p>
+            <p class="staking">{{ qdt_balance }} QDT</p>
           </div>
           <div class="column">
             <h3 class="title">In Staking</h3>
-            <p>{{ staking_qdt }} QDT</p>
+            <p class="staking">{{ staking_qdt }} QDT</p>
           </div>
           <div class="column" v-if="staking.stake">
             <h3 class="title">Interest</h3>
-            <p v-if="staking.stake > 0">{{ interest }} QDT</p>
-            <p v-if="staking.stake == 0">Nothing in stake</p>
+            <p class="staking" v-if="staking.stake > 0">{{ interest }} QDT</p>
+            <p class="staking" v-if="staking.stake == 0">Nothing in stake</p>
           </div>
         </div>
         <hr />
