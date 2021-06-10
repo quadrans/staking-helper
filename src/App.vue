@@ -18,16 +18,16 @@
                 How it works
             </b-navbar-item>
             <b-navbar-dropdown label="Network">
-                <b-navbar-item href="#">
+                <b-navbar-item href="https://quadrans.io">
                     Website
                 </b-navbar-item>
-                <b-navbar-item href="#">
+                <b-navbar-item href="https://status.quadrans.io">
                     Status
                 </b-navbar-item>
-                <b-navbar-item href="#">
+                <b-navbar-item href="https://explorer.quadrans.io">
                     Explorer
                 </b-navbar-item>
-                <b-navbar-item href="#">
+                <b-navbar-item href="https://docs.quadrans.io">
                     Documentation
                 </b-navbar-item>
             </b-navbar-dropdown>
@@ -111,6 +111,10 @@ a {
   right: 0 !important;
   left: auto !important;
   top: 80% !important;
+}
+.navbar-burger {
+    width: 4.25rem !important;
+    height: auto !important;
 }
 
 a.nobold {
