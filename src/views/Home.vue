@@ -11,15 +11,15 @@
         <div class="columns">
           <div class="column">
             <h3 class="title">QDT Balance</h3>
-            <p>{{ qdt_balance }}</p>
+            <p>{{ qdt_balance }} QDT</p>
           </div>
           <div class="column">
             <h3 class="title">In Staking</h3>
-            <p>{{ staking_qdt }}</p>
+            <p>{{ staking_qdt }} QDT</p>
           </div>
           <div class="column" v-if="staking.stake">
             <h3 class="title">Interest</h3>
-            <p v-if="staking.stake > 0">{{ interest }}</p>
+            <p v-if="staking.stake > 0">{{ interest }} QDT</p>
             <p v-if="staking.stake == 0">Nothing in stake</p>
           </div>
         </div>

@@ -218,7 +218,7 @@ h5{
   background-position: top, bottom center, bottom;
   margin-top: 30px;
   padding: 50px 12% 12px 12%;
-  min-height: 640px;
+  min-height: calc(100vh - 270px);
 }
 .box {
   padding: 40px !important;
