@@ -12,7 +12,7 @@
           <ul>
             <li><p>‣ <b>Symbol:</b> QDT</p></li>
             <li><p>‣ <b>Contract:</b> <a href="https://etherscan.io/token/0x9adc7710e9d1b29d8a78c04d52d32532297c2ef3" target="_blank">0x9adc7710e9d1b29d8a78c04d52d32532297c2ef3</a></p></li>
-            <li><p>‣ <b>Max Total Supply:</b> 600 Milion</p></li>
+            <li><p>‣ <b>Max Total Supply:</b> 600 Milions</p></li>
           </ul>
           <h4 class="title">What is Quadrans?</h4>
           <p><b>Quadrans</b> is a public blockchain infrastructure that runs Smart Contracts and decentralised applications (dApps), with particular focus on improving the major challenges that blockchain ecosystems are facing today such as security, interoperability, scalability and high operational costs.</p>
