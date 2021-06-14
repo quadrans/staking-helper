@@ -1,92 +1,104 @@
 <template>
-<div id="blueRowMap">
-  <div class="container">
-    <div class="box">
-      <div v-if="account">
-        <div style="text-align: left">
-          <h3><strong>Welcome back:</strong><br>
-          <p class="staking">{{ account }}</p></h3>
-        </div>
-        <hr />
-        <div class="columns">
-          <div class="column">
-            <h3 class="title">QDT Balance</h3>
-            <p class="staking">{{ qdt_balance }} QDT</p>
+  <div id="blueRowMap">
+    <div class="container">
+      <div class="box">
+        <div v-if="account">
+          <div style="text-align: left">
+            <h3>
+              <strong>Welcome back:</strong><br />
+              <p class="staking">{{ account }}</p>
+            </h3>
           </div>
-          <div class="column">
-            <h3 class="title">In Staking</h3>
-            <p class="staking">{{ staking_qdt }} QDT</p>
+          <hr />
+          <div class="columns">
+            <div class="column">
+              <h3 class="title">QDT Balance</h3>
+              <p class="staking">{{ qdt_balance }} QDT</p>
+            </div>
+            <div class="column">
+              <h3 class="title">In Staking</h3>
+              <p class="staking">{{ staking_qdt }} QDT</p>
+            </div>
+            <div class="column" v-if="staking.stake">
+              <h3 class="title">Interest</h3>
+              <p class="staking" v-if="staking.stake > 0">{{ interest }} QDT</p>
+              <p class="staking" v-if="staking.stake == 0">Nothing in stake</p>
+            </div>
           </div>
-          <div class="column" v-if="staking.stake">
-            <h3 class="title">Interest</h3>
-            <p class="staking" v-if="staking.stake > 0">{{ interest }} QDT</p>
-            <p class="staking" v-if="staking.stake == 0">Nothing in stake</p>
-          </div>
-        </div>
-        <hr />
-        <div class="columns">
-          <div class="column" v-if="staking_qdt === 0">
-            <h3 class="title">Stake</h3>
+          <hr />
+          <div class="columns">
+            <div class="column" v-if="staking_qdt === 0">
+              <h3 class="title">Stake</h3>
               <b-input
                 placeholder="Write the amount to stake here (min. 10000 QDT)"
                 min="10000"
                 type="number"
                 v-model="toStake"
-              ></b-input
-              >
+              ></b-input>
               <b-button
                 v-if="toStake <= qdt_balance && !isApproving && !isStaking"
                 type="fill"
                 v-on:click="stake"
                 >STAKE</b-button
               >
-            <div v-if="isApproving">
-              <b-message type="is-warning" aria-close-label="Close message">
-                Please approve following transaction in order to stake the tokens and wait until confirmed...
-              </b-message>
+              <div v-if="isApproving">
+                <b-message type="is-warning" aria-close-label="Close message">
+                  Please approve following transaction in order to stake the
+                  tokens and wait until confirmed...
+                </b-message>
+              </div>
+              <div v-if="isStaking">
+                <b-message type="is-info" aria-close-label="Close message">
+                  Please confirm the <b>staking transaction</b> and wait until
+                  the transaction is confirmed...
+                </b-message>
+              </div>
+              <div v-if="toStake > qdt_balance">
+                <b-message type="is-danger" aria-close-label="Close message">
+                  Can't stake more than your balance!
+                </b-message>
+              </div>
             </div>
-            <div v-if="isStaking">
-              <b-message type="is-info" aria-close-label="Close message">
-                Please confirm the <b>staking transaction</b> and wait until the transaction is confirmed...
-              </b-message>
-            </div>
-            <div v-if="toStake > qdt_balance">
-              <b-message type="is-danger" aria-close-label="Close message">
-                Can't stake more than your balance!
-              </b-message>
-            </div>
-          </div>
-          <div class="column" v-if="staking_qdt > 0">
-            <h3 class="title">Withdraw</h3>
-            <div style="line-height: 35px; padding-top: 5px">
-              <p>You will withdraw all the tokens + reward.</p>
-            </div>
-            <br />
-            <b-button
-              type="fill"
-              v-if="!isWithdrawing"
-              v-on:click="withdraw"
-              style="margin-top: 50px !important;"
-              >WITHDRAW</b-button
-            >
-            <div v-if="isWithdrawing">
-              <b-message type="is-info" aria-close-label="Close message">
-                Please confirm the <b>withdraw transaction</b> and wait until is confirmed...
-              </b-message>
+            <div class="column" v-if="staking_qdt > 0">
+              <h3 class="title">Withdraw</h3>
+              <div style="line-height: 35px; padding-top: 5px">
+                <p>You will withdraw all the tokens + reward.</p>
+              </div>
+              <br />
+              <b-button
+                type="fill"
+                v-if="!isWithdrawing"
+                v-on:click="withdraw"
+                style="margin-top: 50px !important"
+                >WITHDRAW</b-button
+              >
+              <div v-if="isWithdrawing">
+                <b-message type="is-info" aria-close-label="Close message">
+                  Please confirm the <b>withdraw transaction</b> and wait until
+                  is confirmed...
+                </b-message>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div v-if="!account">
-        <h3 class="title">Connect your wallet to Quadrans Staking Platform</h3>
-        <p>Please connect your Metamask wallet first,<br />window should be open automatically or click below button.</p>
-        <b-button type="fill" style="margin-top: 50px !important;" v-on:click="connect"
-          >CONNECT METAMASK</b-button
-        >
+        <div v-if="!account">
+          <h3 class="title">
+            Connect your wallet to<br>Quadrans Staking Platform
+          </h3><br>
+          <p>
+            Please connect your Metamask wallet first,<br />
+            click below button to initiate connection.
+          </p>
+          <b-button
+            type="fill"
+            style="margin-top: 50px !important"
+            v-on:click="connect"
+            >CONNECT METAMASK</b-button
+          >
+        </div>
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -126,11 +138,17 @@ export default {
         window.ethereum.on("connect", function () {
           app.connect();
         });
-        window.ethereum.on("disconnect", function () {
-          app.connect();
-        });
-        window.ethereum.on("accountsChanged", function () {
-          app.connect();
+        window.ethereum.on("accountsChanged", async function () {
+          let accounts = await app.web3.eth.getAccounts();
+          if (accounts.length > 0) {
+            app.account = accounts[0];
+            app.getinfo();
+            setInterval(function () {
+              app.getinfo();
+            }, 15000);
+          } else {
+            app.account = "";
+          }
         });
         window.ethereum.on("chainChanged", function () {
           app.connect();
@@ -139,7 +157,6 @@ export default {
         console.log("Wallet errored.");
       }
     }
-    app.connect();
   },
   methods: {
     async connect() {
@@ -156,11 +173,13 @@ export default {
             app.staking_address = process.env.VUE_APP_MAINNET_STAKING_CONTRACT;
           }
           let accounts = await app.web3.eth.getAccounts();
-          app.account = accounts[0];
-          app.getinfo();
-          setInterval(function(){
+          if (accounts.length > 0) {
+            app.account = accounts[0];
             app.getinfo();
-          }, 15000)
+            setInterval(function () {
+              app.getinfo();
+            }, 15000);
+          }
         } catch (e) {
           console.log(e.message);
         }
