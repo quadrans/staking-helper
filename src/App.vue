@@ -243,7 +243,6 @@ h5{
 }
 button, input.button{
   padding: 15px 20px !important;
-  margin:15px !important;
   border: 2px solid !important;
   border-radius: 50px !important;
   font-weight: 600 !important;
