@@ -1,39 +1,37 @@
 <template>
   <div id="app">
-      <b-navbar>
-        <template #brand>
-            <b-navbar-item tag="router-link" :to="{ path: '/' }">
-                <img
-                    src="https://quadrans.io/assets/brand/logo_quadrans_color.svg"
-                    alt="Quadrans Foundation"
-                    width="235"
-                >
-            </b-navbar-item>
-        </template>
-        <template #end>
-            <b-navbar-item href="/">
-                Home
-            </b-navbar-item>
-            <b-navbar-item tag="router-link" to="/about">
-                How it works
-            </b-navbar-item>
-            <b-navbar-dropdown label="Network">
-                <b-navbar-item href="https://quadrans.io">
-                    Website
-                </b-navbar-item>
-                <b-navbar-item href="https://status.quadrans.io">
-                    Status
-                </b-navbar-item>
-                <b-navbar-item href="https://explorer.quadrans.io">
-                    Explorer
-                </b-navbar-item>
-                <b-navbar-item href="https://docs.quadrans.io">
-                    Documentation
-                </b-navbar-item>
-            </b-navbar-dropdown>
-        </template>
-
-
+    <b-navbar>
+      <template #brand>
+          <b-navbar-item tag="router-link" :to="{ path: '/' }">
+              <img
+                  src="https://quadrans.io/assets/brand/logo_quadrans_color.svg"
+                  alt="Quadrans Foundation"
+                  width="235"
+              >
+          </b-navbar-item>
+      </template>
+      <template #end>
+          <b-navbar-item href="/">
+              Home
+          </b-navbar-item>
+          <b-navbar-item tag="router-link" to="/about">
+              How it works
+          </b-navbar-item>
+          <b-navbar-dropdown label="Network">
+              <b-navbar-item href="https://quadrans.io">
+                  Website
+              </b-navbar-item>
+              <b-navbar-item href="https://status.quadrans.io">
+                  Status
+              </b-navbar-item>
+              <b-navbar-item href="https://explorer.quadrans.io">
+                  Explorer
+              </b-navbar-item>
+              <b-navbar-item href="https://docs.quadrans.io">
+                  Documentation
+              </b-navbar-item>
+          </b-navbar-dropdown>
+      </template>
     </b-navbar>
     <router-view/>
   </div>
@@ -89,7 +87,7 @@ p.staking {
   font-weight: 400;
 }
 
-b,.bold {
+b, .bold {
   font-weight: 700;
 }
 
@@ -183,6 +181,8 @@ h5{
 }
 .title {
   font-weight: 600 !important;
+  margin-top: 1.5rem;
+  margin-bottom: 0 !important;
 }
 .text-truncate {
     overflow: hidden;

@@ -1,19 +1,29 @@
 <template>
-<div id="blueRowMap">
-  <div class="container">
-    <div class="box" style="text-align: left; ">
-      <h3 class="title">Stake in less than 2 clicks!
-        <h4>Write here some kind of instructions!</h4>
-      </h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis tellus vitae neque tristique vehicula. Integer lobortis est nec purus tempor lacinia. In hac habitasse platea dictumst. Quisque in mauris eu magna pharetra bibendum. Curabitur euismod libero mauris, et vestibulum libero ultrices sed. Nunc sit amet dui at odio tincidunt porta quis vitae nibh. Cras tincidunt massa sagittis, congue magna sit amet, vulputate massa. Morbi nibh leo, euismod a lorem id, eleifend commodo odio. Donec vitae leo volutpat, ultricies eros sit amet, congue lectus. Fusce iaculis, magna nec fringilla sollicitudin, erat nisi dictum mauris, sit amet rutrum ipsum urna et tortor. Suspendisse turpis sapien, molestie eu luctus quis, mollis sit amet nibh. Nullam facilisis arcu eget commodo sagittis. Donec eu purus ut enim vestibulum egestas non sit amet lorem. Proin at tellus ac nisi gravida mollis. Nullam iaculis diam vel nunc tincidunt, et condimentum orci suscipit. Proin lacus enim, dapibus eu arcu in, mollis luctus ex.</p>
-      <p>Vivamus porta fringilla aliquet. Praesent finibus elit sed cursus egestas. Sed ac lectus neque. Donec congue id ante id interdum. Curabitur nunc enim, laoreet quis leo ut, auctor rhoncus velit. Duis velit felis, molestie vitae nibh tincidunt, semper aliquam sapien. Nam a elit dapibus, consectetur massa nec, dictum metus.</p>
-      <p>Duis et lacus risus. Fusce vehicula dictum nisl ut tincidunt. Mauris enim sem, convallis consequat tellus sed, tempor suscipit velit. Sed consectetur vel urna id convallis. Aenean non dictum diam. Proin quis vehicula tortor. In vitae erat eu arcu mollis euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin a urna pretium, tincidunt enim sit amet, aliquet dui. Pellentesque tortor quam, iaculis ac justo vitae, elementum varius mauris.</p>
-      <p>Praesent sagittis pharetra tellus, et consectetur magna. Fusce dolor tellus, placerat quis ligula at, mollis interdum augue. Duis malesuada ipsum quis augue consequat vestibulum. In suscipit leo orci, at pulvinar urna volutpat a. Etiam at eleifend lorem. Nam at purus bibendum, vestibulum odio eget, efficitur nulla. Curabitur lacinia lacus ac lacus faucibus elementum. Sed tortor dui, facilisis nec nunc ut, pulvinar euismod velit. Proin eu luctus erat, ut faucibus eros. Sed pharetra nulla at est pellentesque, non ornare ligula porttitor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis tellus vitae neque tristique vehicula. Integer lobortis est nec purus tempor lacinia. In hac habitasse platea dictumst. Quisque in mauris eu magna pharetra bibendum. Curabitur euismod libero mauris, et vestibulum libero ultrices sed. Nunc sit amet dui at odio tincidunt porta quis vitae nibh. Cras tincidunt massa sagittis, congue magna sit amet, vulputate massa. Morbi nibh leo, euismod a lorem id, eleifend commodo odio. Donec vitae leo volutpat, ultricies eros sit amet, congue lectus. Fusce iaculis, magna nec fringilla sollicitudin, erat nisi dictum mauris, sit amet rutrum ipsum urna et tortor. Suspendisse turpis sapien, molestie eu luctus quis, mollis sit amet nibh. Nullam facilisis arcu eget commodo sagittis. Donec eu purus ut enim vestibulum egestas non sit amet lorem. Proin at tellus ac nisi gravida mollis. Nullam iaculis diam vel nunc tincidunt, et condimentum orci suscipit. Proin lacus enim, dapibus eu arcu in, mollis luctus ex.</p>
-      <p>Vivamus porta fringilla aliquet. Praesent finibus elit sed cursus egestas. Sed ac lectus neque. Donec congue id ante id interdum. Curabitur nunc enim, laoreet quis leo ut, auctor rhoncus velit. Duis velit felis, molestie vitae nibh tincidunt, semper aliquam sapien. Nam a elit dapibus, consectetur massa nec, dictum metus.</p>
-      <p>Duis et lacus risus. Fusce vehicula dictum nisl ut tincidunt. Mauris enim sem, convallis consequat tellus sed, tempor suscipit velit. Sed consectetur vel urna id convallis. Aenean non dictum diam. Proin quis vehicula tortor. In vitae erat eu arcu mollis euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin a urna pretium, tincidunt enim sit amet, aliquet dui. Pellentesque tortor quam, iaculis ac justo vitae, elementum varius mauris.</p>
-      <p>Praesent sagittis pharetra tellus, et consectetur magna. Fusce dolor tellus, placerat quis ligula at, mollis interdum augue. Duis malesuada ipsum quis augue consequat vestibulum. In suscipit leo orci, at pulvinar urna volutpat a. Etiam at eleifend lorem. Nam at purus bibendum, vestibulum odio eget, efficitur nulla. Curabitur lacinia lacus ac lacus faucibus elementum. Sed tortor dui, facilisis nec nunc ut, pulvinar euismod velit. Proin eu luctus erat, ut faucibus eros. Sed pharetra nulla at est pellentesque, non ornare ligula porttitor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+  <div id="blueRowMap">
+    <div class="container">
+      <div class="box" style="text-align: left; ">
+        <h3 class="title">Quadrans Staking</h3>
+          <h4 class="title">What is Quadrans Token Staking Reward?</h4>
+          <p><img src="https://quadrans.io/assets/img/illo_ethical.png" align="right" style="max-width: 250px; width: 100%;">Quadrans Tokens Staking refers to holding your cryptocurrency funds in a smart contract and receive a reward after a period ot time.</p>
+          <p>The QDT are being locked and for your activity you will be rewarded by the Quadrans Foundation in return.</p>
+          <p>Staking provides a way of making an income in QDT. For your partecipation in Quadrans Tokens Staking the Foundation recognize you an <u>yearly interest rate of 14%</u>. The minimum amount of QDT you can stake is <u>10000 Quadrans Token</u>.</p>
+          <p>You can stake/unstake you tokens whenever you want but for every movement you need to pay a fee to the Ethereum network.</p>
+          <h4 class="title">About Quadrans Token</h4>
+          <ul>
+            <li><p>‣ <b>Symbol:</b> QDT</p></li>
+            <li><p>‣ <b>Contract:</b> <a href="https://etherscan.io/token/0x9adc7710e9d1b29d8a78c04d52d32532297c2ef3" target="_blank">0x9adc7710e9d1b29d8a78c04d52d32532297c2ef3</a></p></li>
+            <li><p>‣ <b>Max Total Supply:</b> 600 Milion</p></li>
+          </ul>
+          <h4 class="title">What is Quadrans?</h4>
+          <p><b>Quadrans</b> is a public blockchain infrastructure that runs Smart Contracts and decentralised applications (dApps), with particular focus on improving the major challenges that blockchain ecosystems are facing today such as security, interoperability, scalability and high operational costs.</p>
+          <p>With a mind focused on the needs of Industry, complex supply chains, IOT devices, Quadrans finds its roots in a fork of the Go-Ethereum's source code. To keep the cost of operations balanced, the distribution of Quadrans Coin (QDC) required to write on the blockchain is carried out through a minting protocol.</p>
+          <h4><em>About Quadrans</em></h4>
+            <ul>
+              <li><p>‣ <a href="https://quadrans.io">Quadrans Foundation website</a></p></li>
+              <li><p>‣ <a href="https://docs.quadrans.io">Quadrans blockchain Documentation</a></p></li>
+              <li><p>‣ <a href="https://t.me/quadrans">Quadrans Telegram community</a></p></li>
+            </ul>
+      </div>
     </div>
   </div>
-</div>
 </template>
