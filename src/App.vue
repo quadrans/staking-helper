@@ -226,7 +226,6 @@ h5{
   background-image: url(https://quadrans.io/assets/img/oblique_top.png), url(https://quadrans.io/assets/img/oblique_bottom.png),linear-gradient(to bottom, #16173d, #1b1a4a, #211c58, #291e65, #321f72, #38207b, #3f2084, #46208d, #4b2195, #4f229c, #5422a4, #5923ac);
   background-repeat: no-repeat;
   background-position: top, bottom center, bottom;
-  margin-top: 30px;
   padding: 50px 12% 12px 12%;
   min-height: calc(100vh - 270px);
 }
