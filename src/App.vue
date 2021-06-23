@@ -11,8 +11,11 @@
           </b-navbar-item>
       </template>
       <template #end>
-          <b-navbar-item href="/">
+          <b-navbar-item tag="router-link" to="/">
               Home
+          </b-navbar-item>
+          <b-navbar-item tag="router-link" to="/staking">
+              Staking
           </b-navbar-item>
           <b-navbar-item tag="router-link" to="/about">
               How it works
@@ -241,7 +244,7 @@ h5{
 .message {
   margin-top: 20px !important;
 }
-button, input.button{
+.button, button, input.button{
   padding: 15px 20px !important;
   border: 2px solid !important;
   border-radius: 50px !important;
@@ -250,16 +253,16 @@ button, input.button{
   font-size: 0.9rem !important;
   height: auto !important;
 }
-button:hover, input.button:hover{
+.button:hover, button:hover, input.button:hover{
   transition: 0.4s !important;
   cursor: pointer;
 }
-button.fill{
+.button.fill, button.fill{
   border:2px solid #13FAC8;
   color:#16173D;
   background-color: #13FAC8;
 }
-button.fill:hover{
+.button.fill:hover, button.fill:hover{
   background-color: rgba(255,255,255,0.4);
   border: 2px solid #16173D;
 }

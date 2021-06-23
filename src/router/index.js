@@ -1,14 +1,19 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Staking from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/staking',
+    name: 'Staking',
+    component: Staking
+  },
+  {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Welcome',
+    component: () => import( '../views/Welcome.vue')
   },
   {
     path: '/about',
