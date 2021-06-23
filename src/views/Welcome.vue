@@ -27,7 +27,7 @@
               <img src="https://quadrans.io/assets/img/illo_ethical.png" style="max-width: 200px; width: 100%;">
             </div>
             <div class="column">
-              <h3>Getting <b>started</b></h3>
+              <h3><b>Exiting</b></h3>
               <p>Quadrans does not place limits or obligations on participation. At any time you can add and remove the QDT in staking to request the reward earned up to that moment.</p>
             </div>
           </div>
