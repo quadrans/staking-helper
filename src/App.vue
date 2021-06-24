@@ -176,6 +176,12 @@ h4{
   color: #16173D !important;
 }
 
+h4.staking{
+  font-size: 1.12rem !important;
+  line-height: 2.2rem !important;
+  color: #16173D !important;
+}
+
 h5{
   font-size: 0.8rem !important;
   line-height: 1.8rem !important;
