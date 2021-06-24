@@ -5,8 +5,8 @@
         <h3 class="title">Quadrans Staking</h3>
         <p>Staking is a process that allows Quadrans Token holders to receive a reward for their loyalty.</p>
           <div class="columns mt-3 is-vcentered">
-            <div class="column is-hidden-touch" style="text-align: center;">
-              <img src="https://quadrans.io/assets/img/illo_ethical.png" style="max-width: 200px; width: 100%;">
+            <div class="column has-text-centered-mobile has-text-right-desktop">
+              <img src="/img/started.png" style="max-width: 300px; width: 100%;">
             </div>
             <div class="column">
               <h3>Getting <b>started</b></h3>
@@ -14,20 +14,23 @@
             </div>
           </div>
           <div class="columns mt-3 is-vcentered">
+            <div class="column is-hidden-desktop has-text-centered-mobile">
+              <img src="/img/reward.png" style="max-width: 300px; width: 100%;">
+            </div>
             <div class="column has-text-right-desktop">
               <h3>Earing <b>Reward</b></h3>
               <p>Participate in staking to receive a 14% annual reward based on the duration of your staking. The more time you participate, the more Quadrans Token you will be awarded at the end.</p>
             </div>
-            <div class="column is-hidden-touch" style="text-align: center;">
-              <img src="https://quadrans.io/assets/img/illo_ethical.png" style="max-width: 200px; width: 100%;">
+            <div class="column is-hidden-touch has-text-left-desktop">
+              <img src="/img/reward.png" style="max-width: 300px; width: 100%;">
             </div>
           </div>
           <div class="columns mt-3 is-vcentered">
-            <div class="column is-hidden-touch" style="text-align: center;">
-              <img src="https://quadrans.io/assets/img/illo_ethical.png" style="max-width: 200px; width: 100%;">
+            <div class="column has-text-centered-mobile has-text-right-desktop">
+              <img src="/img/exiting.png" style="max-width: 300px; width: 100%;">
             </div>
             <div class="column">
-              <h3><b>Exiting</b></h3>
+              <h3>Fair <b>Exiting</b></h3>
               <p>Quadrans does not place limits or obligations on participation. At any time you can add and remove the QDT in staking to request the reward earned up to that moment.</p>
             </div>
           </div>
