@@ -263,12 +263,36 @@ h5{
   cursor: pointer;
 }
 .button.fill, button.fill{
-  border:2px solid #13FAC8;
+  border:2px solid #13FAC8 !important;
   color:#16173D;
   background-color: #13FAC8;
 }
 .button.fill:hover, button.fill:hover{
   background-color: rgba(255,255,255,0.4);
-  border: 2px solid #16173D;
+  border: 2px solid #16173D !important;
 }
+.button.violet{
+  padding: 15px 20px !important;
+  border: 2px solid !important;
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  font-size: 0.9rem !important;
+  height: auto !important;
+  border:2px solid rgba(103,25,224,1);
+  color:#FFFFFF;
+  background-color: rgba(103,25,224,1);
+}
+.button.violet:hover{
+  background-color: rgba(255,255,255,0.4);
+  border: 2px solid #16173D;
+  transition: 0.4s !important;
+  cursor: pointer;
+}
+
+
+
+
+
+
 </style>

@@ -25,7 +25,7 @@
               <img src="/img/reward.png" style="max-width: 300px; width: 100%;">
             </div>
           </div>
-          <div class="columns mt-3 is-vcentered">
+          <div class="columns mt-3 is-vcentered is-hidden-desktop">
             <div class="column has-text-centered-mobile has-text-right-desktop">
               <img src="/img/exiting.png" style="max-width: 300px; width: 100%;">
             </div>
@@ -34,14 +34,38 @@
               <h4 class="staking">Quadrans does not place limits or obligations on participation. At any time you can add and remove the QDT in staking to request the reward earned up to that moment.</h4>
             </div>
           </div>
-        <div style="text-align: center;">
-          <b-button
-            type="fill"
-            style="margin-top: 50px !important"
-            tag="router-link" to="/staking" 
-            >STAKING NOW</b-button
-          >
-        </div>
+          <div style="text-align: center;" class="is-hidden-desktop">
+            <b-button
+              type="fill"
+              style="margin-top: 50px !important"
+              tag="router-link" to="/staking" 
+              >STAKING NOW</b-button
+            >
+          </div>
+          <div class="columns mt-3 is-vcentered is-hidden-touch ">
+            <div class="column has-text-centered">
+              <h3>Fair <b>Exiting</b></h3>
+              <h4 class="staking">Quadrans does not place limits or obligations on participation.<br>At any time you can add and remove the QDT in staking to request the reward earned up to that moment.</h4>
+            </div>
+          </div>
+          <div class="columns mt-3 is-hidden-touch ">
+            <div class="column has-text-centered-mobile has-text-right-desktop">
+              <img src="/img/exiting_left.png" style="max-width: 300px; width: 100%;">
+            </div>
+            <div class="column has-text-centered" style="max-width: 155px; padding: 0px;">
+              <b-button
+                type="violet"
+                style="margin-top: 50px !important"
+                tag="router-link" to="/staking" 
+                >STAKING NOW</b-button
+              >
+            </div>
+            <div class="column has-text-centered-mobile has-text-left-desktop">
+              <img src="/img/exiting_right.png" style="max-width: 300px; width: 100%;">
+            </div>
+          </div>
+          <div style="text-align: center;">
+          </div>
       </div>
     </div>
   </div>
