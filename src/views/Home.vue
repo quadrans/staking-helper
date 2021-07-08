@@ -83,18 +83,37 @@
         </div>
         <div v-if="!account">
           <h3 class="title">
-            Connect your wallet to<br>Quadrans Staking Platform
-          </h3><br>
-          <p>
-            Please connect your Metamask wallet first,<br />
-            click below button to initiate connection.
-          </p>
-          <b-button
-            type="fill"
-            style="margin-top: 50px !important"
-            v-on:click="connect"
-            >CONNECT METAMASK</b-button
-          >
+            Connect your wallet to<br />Quadrans Staking Platform
+          </h3>
+          <br />
+          <div v-if="metamaskFound">
+            <p>
+              Please connect your Metamask wallet first,<br />
+              click below button to initiate connection.
+            </p>
+            <b-button
+              type="fill"
+              style="margin-top: 50px !important"
+              v-on:click="connect"
+              >CONNECT METAMASK</b-button
+            >
+          </div>
+          <div v-if="!metamaskFound">
+            <p>
+              Please install Metamask first, download it for Firefox or Chromium
+              based browsers.
+            </p>
+            <a href="https://addons.mozilla.org/it/firefox/addon/ether-metamask/" target="_blank">
+              <b-button type="fill" style="margin: 50px 10px!important"
+                >FIREFOX</b-button
+              >
+            </a>
+            <a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=it" target="_blank">
+              <b-button type="fill" style="margin: 50px 10px!important;"
+                >CHROME</b-button
+              >
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -114,6 +133,7 @@ export default {
       web3: new Web3(window.ethereum),
       account: "",
       qdt_balance: 0,
+      metamaskFound: false,
       staking_balance: 0,
       toStake: "",
       isApproving: false,
@@ -133,7 +153,9 @@ export default {
   },
   mounted() {
     const app = this;
-    if (typeof window.ethereum !== "undefined") {
+    console.log("eth", window.ethereum);
+    if (window.ethereum !== undefined && window.ethereum !== null) {
+      app.metamaskFound = true;
       try {
         window.ethereum.on("connect", function () {
           app.connect();
@@ -156,6 +178,8 @@ export default {
       } catch (e) {
         console.log("Wallet errored.");
       }
+    } else {
+      app.metamaskFound = false;
     }
   },
   methods: {
