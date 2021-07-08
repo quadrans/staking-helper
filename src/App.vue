@@ -25,17 +25,6 @@
           <li class="nav-item text-center">
             <router-link to="/about" class="nav-link" >How it works<div></div></router-link>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Network
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="https://quadrans.io">Website</a>
-              <a class="dropdown-item" href="https://status.quadrans.io">Network Status</a>
-              <a class="dropdown-item" href="https://explorer.quadrans.io">Blockchain Explorer</a>
-              <a class="dropdown-item" href="https://docs.quadrans.io">Documentation</a>
-            </div>
-          </li>
         </ul>
       </div>
 
