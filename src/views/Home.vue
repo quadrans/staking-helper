@@ -1,33 +1,38 @@
 <template>
-  <div id="blueRowMap">
-    <div class="container">
-      <div class="box">
+
+
+<div class="container-fluid px-0 pt-0" >
+
+  <div class="container-fluid bg-map-grey first-section row-before-blue">
+    <div class="container first-section">
+      <div class="card card-q">
         <div v-if="account">
           <div style="text-align: left">
             <h3>
-              <strong>Welcome back:</strong><br />
-              <p class="staking">{{ account }}</p>
+              <b>Welcome</b><br />
+            <p class="staking">Your Ethereum wallet is: <b>{{ account }}</b></p>
+              
             </h3>
           </div>
           <hr />
-          <div class="columns">
-            <div class="column">
+          <div class="row">
+            <div class="col-12 col-md">
               <h3 class="title">QDT Balance</h3>
               <p class="staking">{{ qdt_balance }} QDT</p>
             </div>
-            <div class="column">
+            <div class="col-12 col-md">
               <h3 class="title">In Staking</h3>
               <p class="staking">{{ staking_qdt }} QDT</p>
             </div>
-            <div class="column" v-if="staking.stake">
-              <h3 class="title">Interest</h3>
+            <div class="col-12 col-md" v-if="staking.stake">
+              <h3 class="title">Reward</h3>
               <p class="staking" v-if="staking.stake > 0">{{ interest }} QDT</p>
               <p class="staking" v-if="staking.stake == 0">Nothing in stake</p>
             </div>
           </div>
           <hr />
-          <div class="columns">
-            <div class="column" v-if="staking_qdt === 0">
+          <div class="row">
+            <div class="col-12 col-md-6" v-if="staking_qdt === 0">
               <h3 class="title">Stake</h3>
               <b-input
                 placeholder="Write the amount to stake here (min. 10000 QDT)"
@@ -35,12 +40,14 @@
                 type="number"
                 v-model="toStake"
               ></b-input>
+              <div class="text-center">
               <b-button
                 v-if="toStake <= qdt_balance && !isApproving && !isStaking"
                 type="fill"
                 v-on:click="stake"
                 >STAKE</b-button
               >
+              </div>
               <div v-if="isApproving">
                 <b-message type="is-warning" aria-close-label="Close message">
                   Please approve following transaction in order to stake the
@@ -59,19 +66,17 @@
                 </b-message>
               </div>
             </div>
-            <div class="column" v-if="staking_qdt > 0">
+            <div class="col-12 col-md-6" v-if="staking_qdt > 0">
               <h3 class="title">Withdraw</h3>
-              <div style="line-height: 35px; padding-top: 5px">
-                <p>You will withdraw all the tokens + reward.</p>
-              </div>
-              <br />
+                <p style="line-height: 22px !important">You will withdraw all the tokens + reward.</p>
+              <div class="text-center">
               <b-button
-                type="fill"
+                type="fill mx-auto"
                 v-if="!isWithdrawing"
                 v-on:click="withdraw"
-                style="margin-top: 50px !important"
                 >WITHDRAW</b-button
               >
+              </div>
               <div v-if="isWithdrawing">
                 <b-message type="is-info" aria-close-label="Close message">
                   Please confirm the <b>withdraw transaction</b> and wait until
@@ -81,14 +86,14 @@
             </div>
           </div>
         </div>
-        <div v-if="!account">
-          <h3 class="title">
-            Connect your wallet to<br />Quadrans Staking Platform
-          </h3>
+        <div v-if="!account" class="text-center">
+          <h1 class="title">
+            Connect your wallet to <b>Quadrans Staking Platform</b>
+          </h1>
           <br />
           <div v-if="metamaskFound">
             <p>
-              Please connect your Metamask wallet first,<br />
+              Please connect your Metamask wallet first,
               click below button to initiate connection.
             </p>
             <b-button
@@ -97,6 +102,9 @@
               v-on:click="connect"
               >CONNECT METAMASK</b-button
             >
+            <p style="margin-top: 50px !important">
+              For more information about Quadrans Staking and requrements please read the <router-link to="/about">How it works page</router-link>.
+            </p>
           </div>
           <div v-if="!metamaskFound">
             <p>
@@ -113,11 +121,18 @@
                 >CHROME</b-button
               >
             </a>
+            <p style="margin-top: 50px !important">
+              For more information about Quadrans Staking and requrements please read the <router-link to="/about">How it works page</router-link>.
+            </p>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+
+
+</div>
 </template>
 
 <script>

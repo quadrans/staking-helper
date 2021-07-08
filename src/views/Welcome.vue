@@ -1,72 +1,114 @@
 <template>
-  <div id="blueRowMap">
-    <div class="container">
-      <div class="box" style="text-align: left; ">
-        <h3 class="title">Quadrans Staking</h3>
-        <h4 class="staking">Staking is a process that allows Quadrans Token holders to receive a reward for their loyalty.</h4>
-          <div class="columns mt-3 is-vcentered">
-            <div class="column has-text-centered-mobile has-text-right-desktop">
-              <img src="/img/started.png" style="max-width: 300px; width: 100%;">
-            </div>
-            <div class="column">
-              <h3>Getting <b>started</b></h3>
-              <h4 class="staking">Getting started is very easy! Click on the button and follow the wizard to transfer the QDTs from your wallet to the Staking Contract.</h4>
+
+<div class="container-fluid px-0 pt-0">
+    
+      <div class="container-fluid bg-map-grey first-section row-before-blue">
+        <div class="row justify-content-center first-section">
+          <div class="col-12 col-md-6 text-center">
+            <h1>Stake <b>Quadrans Token</b></h1>
+            <p>Stake is a process that allows Quadrans Token holders to <b>receive a reward for ther loyalty.</b></p>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col text-center d-flex justify-content-end">
+            <div class="mr-3">
+              <h1 class="violet count mb-0"><b>14%</b></h1>
+              <p class="mb-0 font-italic"><b>APY</b></p>
+              <p>you can earn</p>
             </div>
           </div>
-          <div class="columns mt-3 is-vcentered">
-            <div class="column is-hidden-desktop has-text-centered-mobile">
-              <img src="/img/reward.png" style="max-width: 300px; width: 100%;">
-            </div>
-            <div class="column has-text-right-desktop">
-              <h3>Earing <b>Reward</b></h3>
-              <h4 class="staking">Participate in staking to receive a 14% annual reward based on the duration of your staking. The more time you participate, the more Quadrans Token you will be awarded at the end.</h4>
-            </div>
-            <div class="column is-hidden-touch has-text-left-desktop">
-              <img src="/img/reward.png" style="max-width: 300px; width: 100%;">
+          <div class="col text-center d-flex justify-content-start">
+            <div class="ml-3">
+              <h1 class="violet count mb-0"><b>10k</b></h1>
+              <p class="mb-0 font-italic"><b>QDT minimum</b></p>
+              <p>to join the staking</p>
             </div>
           </div>
-          <div class="columns mt-3 is-vcentered is-hidden-desktop">
-            <div class="column has-text-centered-mobile has-text-right-desktop">
-              <img src="/img/exiting.png" style="max-width: 300px; width: 100%;">
-            </div>
-            <div class="column">
-              <h3>Fair <b>Exiting</b></h3>
-              <h4 class="staking">Quadrans does not place limits or obligations on participation. At any time you can add and remove the QDT in staking to request the reward earned up to that moment.</h4>
-            </div>
-          </div>
-          <div style="text-align: center;" class="is-hidden-desktop">
-            <b-button
-              type="fill"
-              style="margin-top: 50px !important"
-              tag="router-link" to="/staking" 
-              >STAKING NOW</b-button
-            >
-          </div>
-          <div class="columns mt-3 is-vcentered is-hidden-touch ">
-            <div class="column has-text-centered">
-              <h3>Fair <b>Exiting</b></h3>
-              <h4 class="staking">Quadrans does not place limits or obligations on participation.<br>At any time you can add and remove the QDT in staking to request the reward earned up to that moment.</h4>
-            </div>
-          </div>
-          <div class="columns mt-3 is-hidden-touch ">
-            <div class="column has-text-centered-mobile has-text-right-desktop">
-              <img src="/img/exiting_left.png" style="max-width: 300px; width: 100%;">
-            </div>
-            <div class="column has-text-centered" style="max-width: 155px; padding: 0px;">
+        </div>
+      </div>
+   
+      <div class="container-fluid bg-blue-before p-0"><img class="img-fluid" src="/img/oblique_top.png"></div>
+      <div class="bg-blue container-fluid">
+        <div class="row top-negative-150">
+          <div class="col text-center">
               <b-button
                 type="violet"
-                style="margin-top: 50px !important"
                 tag="router-link" to="/staking" 
                 >STAKING NOW</b-button
               >
-            </div>
-            <div class="column has-text-centered-mobile has-text-left-desktop">
-              <img src="/img/exiting_right.png" style="max-width: 300px; width: 100%;">
+          </div>
+        </div>   
+        <div class="row">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-12 col-lg-6 my-auto pr-xl-5 text-left order-2 order-lg-1">
+                <h1 class="white">Getting <b>Started</b></h1>
+                <div style="border-left: 8px solid #13fac8; padding-left: 15px;">
+                  <h5 class="white font-weight-bold" style="text-transform:none;">Getting started is very easy!</h5>
+                  <p class="white mb-0">Click on the button and follow the wizard to transfer the QDTs from your wallet to the Staking Contract.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6 justify-content-center order-1 order-lg-2 d-flex">
+                <img class="img-fluid py-3" src="/img/started.png" style="max-height: 300px;">
+              </div>
             </div>
           </div>
-          <div style="text-align: center;">
+        </div>
+        <div class="row justify-content-center d-none d-lg-flex">
+          <div class="col-3">
+            <img class="img-fluid py-3" src="/img/arrow.png" style="max-height: 300px;">
           </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+              <div class="row">
+                <div class="col-12 col-lg-6 justify-content-center d-flex">
+                  <img class="img-fluid py-3" src="/img/reward.png" style="max-height: 300px;">
+                </div>
+                <div class="col-12 col-lg-6 my-auto pr-xl-5 text-lg-right text-left">
+                  <h1 class="white">Earning <b>Reward</b></h1>
+                  <div class="d-none" style="border-right: 8px solid #13fac8; padding-right: 15px;">
+                    <h5 class="white font-weight-bold" style="text-transform:none;">Participate in staking to receive a 14% annual reward based on the duration of your staking.</h5>
+                    <p class="white mb-0">The more time you participate, the more Quadrans Token you will be awarded at the end.</p>
+                  </div> 
+                  <div class="d-lg-block" style="border-left: 8px solid #13fac8; padding-left: 15px;">
+                    <h5 class="white font-weight-bold" style="text-transform:none;">Participate in staking to receive a 14% annual reward based on the duration of your staking.</h5>
+                    <p class="white mb-0">The more time you participate, the more Quadrans Token you will be awarded at the end.</p>
+                  </div> 
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+              <div class="row">
+                <div class="col-12 col-lg-6 my-auto pr-xl-5 text-left order-2 order-lg-1">
+                  <h1 class="white">Fair <b>Exiting</b></h1>
+                  <div style="border-left: 8px solid #13fac8;padding-left: 15px;">
+                    <h5 class="white font-weight-bold" style="text-transform:none;">Quadrans does not place limits or obligationson participation.</h5>
+                    <p class="white mb-0">At any time you can add and remove the QDT in staking to request the reward earned up to that moment.</p>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6 justify-content-center d-flex order-1 order-lg-2">
+                  <img class="img-fluid py-3" src="/img/exiting.png" style="max-height: 300px;">
+                </div>
+              </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+      <div class="container-fluid bg-blue-after p-0"><img class="img-fluid" src="/img/oblique_bottom.png"></div>
+      <div class="container-fluid row-after-blue">
+        <div class="row justify-content-center">
+          <div class="col text-center">
+            <h3>Connect your wallet <b>to <br />Quadrans Staking Platform</b></h3>
+              <b-button
+                type="violet"
+                tag="router-link" to="/staking" 
+                >STAKING NOW</b-button
+              >
+          </div>
+        </div>
+      </div>
+</div>
+
 </template>
