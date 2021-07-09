@@ -10,11 +10,13 @@
                 <p>Quadrans Tokens Staking refers to holding your cryptocurrency funds in a smart contract and receive a reward after a period of time. 
                    The QDT will be locked and for your activity you will be rewarded by the Quadrans Foundation in return.
                 </p>
-              <b-button
-                type="fill"
-                tag="router-link" to="/" 
-                >Stake NOW</b-button
-              >              </div>
+                <router-link to="/">
+                  <b-button
+                    type="fill"
+                    >Stake NOW</b-button
+                  > 
+                </router-link>             
+              </div>
             </div>
           </div>
           <div class="col-12 col-lg-6">
@@ -115,23 +117,17 @@
               <div class="col">
                 <h6 class="violet text-uppercase font-weight-bold">Quadrans Links</h6>
                 <div class="row">
-                  <div class="col justify-content-start mt-3">
+                  <div class="col d-flex justify-content-start mt-3">
                     <a href="https://quadrans.io" target="_blank" class="violet mb-auto mx-2">
-                      <div class="card-link d-flex text-center" style="width: 150px">
+                      <div class="card-link d-flex text-center" style="width: 125px">
                         <i class="fas fa-globe violet mt-auto" style="font-size: 32px"></i>
                         <small>Website</small>
                       </div>
                     </a>
                     <a href="https://t.com/quadrans" target="_blank" class="violet mb-auto mx-2">
-                      <div class="card-link d-flex text-center" style="width: 150px">
+                      <div class="card-link d-flex text-center" style="width: 125">
                         <i class="fab fa-telegram violet mt-auto" style="font-size: 32px"></i>
                         <small>Community</small>
-                      </div>
-                    </a>
-                    <a href="https://docs.quadrans.io" target="_blank" class="violet mb-auto mx-2">
-                      <div class="card-link d-flex text-center" style="width: 150px">
-                        <i class="fas fa-folder-open violet mt-auto" style="font-size: 32px"></i>
-                        <small>Documentation</small>
                       </div>
                     </a>
                   </div>

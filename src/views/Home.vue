@@ -39,8 +39,10 @@
               v-if="metamaskFound"
               >CONNECT METAMASK</b-button
             >
-            <a href="#" v-scroll-to="'#stakenow'" aria-current="page" style="margin-top: 10px;" class="button router-link-exact-active router-link-active violet" type="button" v-if="!metamaskFound">
-              <span>STAKE NOW</span>
+            <a href="#" v-scroll-to="'#stakenow'" aria-current="page" style="margin-top: 10px;" v-if="!metamaskFound">
+              <b-button type="violet"
+                >STAKE NOW</b-button
+              >
             </a>
           </div>
         </div>   
