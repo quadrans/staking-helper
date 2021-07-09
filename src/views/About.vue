@@ -12,8 +12,8 @@
                 </p>
               <b-button
                 type="fill"
-                tag="router-link" to="/staking" 
-                >STAKING NOW</b-button
+                tag="router-link" to="/" 
+                >Stake NOW</b-button
               >              </div>
             </div>
           </div>
@@ -102,7 +102,7 @@
                 <ul class="list-style mt-3">
                   <li class="py-1">Symbol: <b>QDT</b>
                   </li>
-                  <li class="py-2">
+                  <li class="py-2 text-break">
                     Contract: 
                     <a target="_blank" href="https://etherscan.io/address/0x9adc7710e9d1b29d8a78c04d52d32532297c2ef3">0x9adc7710e9d1b29d8a78c04d52d32532297c2ef3</a>
                   </li>

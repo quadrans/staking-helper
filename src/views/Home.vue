@@ -33,7 +33,14 @@
       <div class="bg-blue container-fluid">
         <div class="row top-negative-150">
           <div class="col text-center">
-            <a href="#" v-scroll-to="'#stakenow'" aria-current="page" class="button router-link-exact-active router-link-active violet" type="button">
+            <b-button
+              type="violet"
+              style="margin-top: 20px !important"
+              v-on:click="connect"
+              v-if="metamaskFound"
+              >CONNECT METAMASK</b-button
+            >
+            <a href="#" v-scroll-to="'#stakenow'" aria-current="page" class="button router-link-exact-active router-link-active violet" type="button" v-if="!metamaskFound">
               <span>STAKE NOW</span>
             </a>
           </div>
@@ -107,7 +114,7 @@
                   click below button to initiate connection.
                 </p>
                 <b-button
-                  type="violet"
+                  type="fill"
                   style="margin-top: 20px !important"
                   v-on:click="connect"
                   >CONNECT METAMASK</b-button
