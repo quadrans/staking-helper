@@ -2206,6 +2206,11 @@
   dependencies:
     "tweetnacl" "^0.14.3"
 
+"bezier-easing@2.1.0":
+  "integrity" "sha1-wE3+i5JtbsrKGBPWn/F5t8ICXYY="
+  "resolved" "https://registry.npmjs.org/bezier-easing/-/bezier-easing-2.1.0.tgz"
+  "version" "2.1.0"
+
 "bfj@^6.1.1":
   "integrity" "sha512-BmBJa4Lip6BPRINSZ0BPEIfB1wUY/9rwbwvIHQA1KjX9om29B6id0wnWXq7m3bn5JrUVjeOTnVuhPT1FiHwPGw=="
   "resolved" "https://registry.npmjs.org/bfj/-/bfj-6.1.2.tgz"
@@ -2318,11 +2323,6 @@
   "integrity" "sha1-aN/1++YMUes3cl6p4+0xDcwed24="
   "resolved" "https://registry.npmjs.org/boolbase/-/boolbase-1.0.0.tgz"
   "version" "1.0.0"
-
-"bootstrap4@^0.0.1-security":
-  "integrity" "sha1-WYkg1Ur8sq461zUayrxX45QtnEk="
-  "resolved" "https://registry.npmjs.org/bootstrap4/-/bootstrap4-0.0.1-security.tgz"
-  "version" "0.0.1-security"
 
 "brace-expansion@^1.1.7":
   "integrity" "sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA=="
@@ -9375,6 +9375,13 @@
   "integrity" "sha512-RRQNLT8Mzr8z7eL4p7BtKvRaTSGdCbTy2+Mm5HTJvLGYSSeG9gDzNasJPP/yOYKLy+/cLG/ftrqq5fvkFwBJEw=="
   "resolved" "https://registry.npmjs.org/vue-router/-/vue-router-3.5.1.tgz"
   "version" "3.5.1"
+
+"vue-scrollto@^2.20.0":
+  "integrity" "sha512-7i+AGKJTThZnMEkhIPgrZjyAX+fXV7/rGdg+CV283uZZwCxwiMXaBLTmIc5RTA4uwGnT+E6eJle3mXQfM2OD3A=="
+  "resolved" "https://registry.npmjs.org/vue-scrollto/-/vue-scrollto-2.20.0.tgz"
+  "version" "2.20.0"
+  dependencies:
+    "bezier-easing" "2.1.0"
 
 "vue-style-loader@^4.1.0", "vue-style-loader@^4.1.2":
   "integrity" "sha512-sFuh0xfbtpRlKfm39ss/ikqs9AbKCoXZBpHeVZ8Tx650o0k0q/YCM7FRvigtxpACezfq6af+a7JeqVTWvncqDg=="

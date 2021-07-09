@@ -6,14 +6,9 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/staking',
+    path: '/',
     name: 'Staking',
     component: Staking
-  },
-  {
-    path: '/',
-    name: 'Welcome',
-    component: () => import( '../views/Welcome.vue')
   },
   {
     path: '/about',

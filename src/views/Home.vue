@@ -3,10 +3,147 @@
 
 <div class="container-fluid px-0 pt-0" >
 
-  <div class="container-fluid bg-map-grey first-section row-before-blue">
-    <div class="container first-section">
-      <div class="card card-q">
-        <div v-if="account">
+    <div v-if="!account">
+      <div class="container-fluid bg-map-grey first-section row-before-blue">
+        <div class="row justify-content-center first-section">
+          <div class="col-12 col-md-6 text-center">
+            <h1>Stake <b>Quadrans Token</b></h1>
+            <p>Stake is a process that allows Quadrans Token holders to <b>receive a reward for ther loyalty.</b></p>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col text-center d-flex justify-content-end">
+            <div class="mr-3">
+              <h1 class="violet count mb-0"><b>14%</b></h1>
+              <p class="mb-0 font-italic"><b>APY</b></p>
+              <p>you can earn</p>
+            </div>
+          </div>
+          <div class="col text-center d-flex justify-content-start">
+            <div class="ml-3">
+              <h1 class="violet count mb-0"><b>10k</b></h1>
+              <p class="mb-0 font-italic"><b>QDT minimum</b></p>
+              <p>to join the staking</p>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+      <div class="container-fluid bg-blue-before p-0"><img class="img-fluid" src="/img/oblique_top.png"></div>
+      <div class="bg-blue container-fluid">
+        <div class="row top-negative-150">
+          <div class="col text-center">
+            <a href="#" v-scroll-to="'#stakenow'" aria-current="page" class="button router-link-exact-active router-link-active violet" type="button">
+              <span>STAKE NOW</span>
+            </a>
+          </div>
+        </div>   
+        <div class="row">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-12 col-lg-6 my-auto pr-xl-5 text-left order-2 order-lg-1">
+                <h1 class="white">Getting <b>Started</b></h1>
+                <div style="border-left: 8px solid #13fac8; padding-left: 15px;">
+                  <h5 class="white font-weight-bold" style="text-transform:none;">Getting started is very easy!</h5>
+                  <p class="white mb-0">Click on the button and follow the wizard to transfer the QDTs from your wallet to the Staking Contract.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6 justify-content-center order-1 order-lg-2 d-flex">
+                <img class="img-fluid py-3" src="/img/started.png" style="max-height: 300px;">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center d-none d-lg-flex">
+          <div class="col-3">
+            <img class="img-fluid py-3" src="/img/arrow.png" style="max-height: 300px;">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+              <div class="row">
+                <div class="col-12 col-lg-6 justify-content-center d-flex">
+                  <img class="img-fluid py-3" src="/img/reward.png" style="max-height: 300px;">
+                </div>
+                <div class="col-12 col-lg-6 my-auto pr-xl-5 text-lg-right text-left">
+                  <h1 class="white">Earning <b>Reward</b></h1>
+                  <div class="d-none" style="border-right: 8px solid #13fac8; padding-right: 15px;">
+                    <h5 class="white font-weight-bold" style="text-transform:none;">Participate in staking to receive a 14% annual reward based on the duration of your staking.</h5>
+                    <p class="white mb-0">The more time you participate, the more Quadrans Token you will be awarded at the end.</p>
+                  </div> 
+                  <div class="d-lg-block" style="border-left: 8px solid #13fac8; padding-left: 15px;">
+                    <h5 class="white font-weight-bold" style="text-transform:none;">Participate in staking to receive a 14% annual reward based on the duration of your staking.</h5>
+                    <p class="white mb-0">The more time you participate, the more Quadrans Token you will be awarded at the end.</p>
+                  </div> 
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+              <div class="row">
+                <div class="col-12 col-lg-6 my-auto pr-xl-5 text-left order-2 order-lg-1">
+                  <h1 class="white">Fair <b>Exiting</b></h1>
+                  <div style="border-left: 8px solid #13fac8;padding-left: 15px;">
+                    <h5 class="white font-weight-bold" style="text-transform:none;">Quadrans does not place limits or obligationson participation.</h5>
+                    <p class="white mb-0">At any time you can add and remove the QDT in staking to request the reward earned up to that moment.</p>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6 justify-content-center d-flex order-1 order-lg-2">
+                  <img class="img-fluid py-3" src="/img/exiting.png" style="max-height: 300px;">
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid bg-blue-after p-0"><img class="img-fluid" src="/img/oblique_bottom.png"></div>
+      <div class="container-fluid row-after-blue" id="stakenow">
+        <div class="row justify-content-center">
+          <div class="col text-center">
+            <h2>Connect your wallet to <br /><b>Quadrans Staking Platform</b></h2>
+              <div v-if="metamaskFound">
+                <p style="margin-top: 20px !important">
+                  Please connect your Metamask wallet first,
+                  click below button to initiate connection.
+                </p>
+                <b-button
+                  type="violet"
+                  style="margin-top: 20px !important"
+                  v-on:click="connect"
+                  >CONNECT METAMASK</b-button
+                >
+                <p style="margin-top: 20px !important">
+                  For more information about Quadrans Staking and requrements please read the <router-link to="/about">How it works page</router-link>.
+                </p>
+              </div>
+              <div v-if="!metamaskFound">
+                <p style="margin-top: 20px !important">
+                  Please install Metamask first, download it for Firefox or Chromium
+                  based browsers.
+                </p>
+                <a href="https://addons.mozilla.org/it/firefox/addon/ether-metamask/" target="_blank">
+                  <b-button type="fill" style="margin: 20px 10px!important"
+                    >FIREFOX</b-button
+                  >
+                </a>
+                <a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=it" target="_blank">
+                  <b-button type="fill" style="margin: 20px 10px!important;"
+                    >CHROME</b-button
+                  >
+                </a>
+                <p style="margin-top: 20px !important">
+                  For more information about Quadrans Staking and requrements please read the <router-link to="/about">How it works page</router-link>.
+                </p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container-fluid bg-map-grey first-section row-before-blue" v-if="account">
+      <div class="first-section">
+        <div class="card card-q">
           <div style="text-align: left">
             <h3>
               <b>Welcome</b><br />
@@ -86,53 +223,11 @@
             </div>
           </div>
         </div>
-        <div v-if="!account" class="text-center">
-          <h1 class="title">
-            Connect your wallet to <b>Quadrans Staking Platform</b>
-          </h1>
-          <br />
-          <div v-if="metamaskFound">
-            <p>
-              Please connect your Metamask wallet first,
-              click below button to initiate connection.
-            </p>
-            <b-button
-              type="fill"
-              style="margin-top: 50px !important"
-              v-on:click="connect"
-              >CONNECT METAMASK</b-button
-            >
-            <p style="margin-top: 50px !important">
-              For more information about Quadrans Staking and requrements please read the <router-link to="/about">How it works page</router-link>.
-            </p>
-          </div>
-          <div v-if="!metamaskFound">
-            <p>
-              Please install Metamask first, download it for Firefox or Chromium
-              based browsers.
-            </p>
-            <a href="https://addons.mozilla.org/it/firefox/addon/ether-metamask/" target="_blank">
-              <b-button type="fill" style="margin: 50px 10px!important"
-                >FIREFOX</b-button
-              >
-            </a>
-            <a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=it" target="_blank">
-              <b-button type="fill" style="margin: 50px 10px!important;"
-                >CHROME</b-button
-              >
-            </a>
-            <p style="margin-top: 50px !important">
-              For more information about Quadrans Staking and requrements please read the <router-link to="/about">How it works page</router-link>.
-            </p>
-          </div>
-        </div>
       </div>
     </div>
-  </div>
-
-
-
 </div>
+
+
 </template>
 
 <script>

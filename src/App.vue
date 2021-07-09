@@ -20,9 +20,6 @@
             <router-link to="/" class="nav-link" >Home<div></div></router-link>
           </li>
           <li class="nav-item text-center">
-            <router-link to="/staking" class="nav-link" >Staking<div></div></router-link>
-          </li>
-          <li class="nav-item text-center">
             <router-link to="/about" class="nav-link" >How it works<div></div></router-link>
           </li>
         </ul>
