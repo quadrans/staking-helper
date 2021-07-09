@@ -147,7 +147,6 @@ hr {
 
 .list-style{list-style:disc;margin-left: 17px;}
 
-.bg_violet-opa{}
 .card-link{background-color:#6719E01A; padding:20px 30px; border-radius:15px;height:100px;flex-direction: column;}
 
 @media (min-width: 600px) {
