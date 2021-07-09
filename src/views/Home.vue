@@ -35,7 +35,6 @@
           <div class="col text-center">
             <b-button
               type="violet"
-              style="margin-top: 20px !important"
               v-on:click="connect"
               v-if="metamaskFound"
               >CONNECT METAMASK</b-button
