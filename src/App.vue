@@ -142,7 +142,7 @@ hr {
   max-height:65px;
 }
 .card-q-topspecial{margin-top:100px;}
-.top-negative-150{margin-top: -130px;}
+.top-negative-150{margin-top: -150px;}
 .top-negative-190{margin-top: -190px;}
 
 .list-style{list-style:disc;margin-left: 17px;}
