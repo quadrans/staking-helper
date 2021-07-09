@@ -19,22 +19,22 @@
           </div>
           <div class="col-12 col-lg-6">
             <div class="row card-q d-flex bg-white p-4">
-              <div class="col-2 text-left text-md-center align-self-center">
+              <div class="col-12 col-sm-2 text-center align-self-center">
                 <h1 class="violet count mb-0"><b>14%</b></h1>
                 <p class="mb-0 font-italic"><b>APY</b></p>
               </div>
-              <div class="col-10">
+              <div class="col-12 col-sm-10">
                 <p class="mb-0">Staking provides a way of making an income in QDT. For your partecipation in Quadrans Tokens Staking the Foundation recognize 
                     you an <b>yearly reward of 14%</b>.
                 </p>
               </div>
             </div>
             <div class="row card-q d-flex bg-white p-4">
-              <div class="col-2 text-left text-md-center align-self-center">
+              <div class="col-12 col-sm-2 text-center align-self-center">
                 <h1 class="violet count mb-0"><b>10k</b></h1>
                 <p class="mb-0 font-italic"><b>QDT</b></p>
               </div>
-              <div class="col-10">
+              <div class="col-12 col-sm-10">
                 <p class="mb-0">The minimum amount of QDT you can stake is <b>10.000 Quadrans Token</b>. You can stake/unstake you tokens whenever you want but for every 
                 movement you need to pay a fee to the Ethereum network.
                 </p>
@@ -115,7 +115,7 @@
               <div class="col">
                 <h6 class="violet text-uppercase font-weight-bold">Quadrans Links</h6>
                 <div class="row">
-                  <div class="col d-flex justify-content-start mt-3">
+                  <div class="col justify-content-start mt-3">
                     <a href="https://quadrans.io" target="_blank" class="violet mb-auto mx-2">
                       <div class="card-link d-flex text-center" style="width: 150px">
                         <i class="fas fa-globe violet mt-auto" style="font-size: 32px"></i>
