@@ -93,7 +93,7 @@
                 <div class="col-12 col-lg-6 my-auto pr-xl-5 text-left order-2 order-lg-1">
                   <h1 class="white">Fair <b>Exiting</b></h1>
                   <div style="border-left: 8px solid #13fac8;padding-left: 15px;">
-                    <h5 class="white font-weight-bold" style="text-transform:none;">Quadrans does not place limits or obligationson participation.</h5>
+                    <h5 class="white font-weight-bold" style="text-transform:none;">Quadrans does not place limits or obligations on participation.</h5>
                     <p class="white mb-0">At any time you can add and remove the QDT in staking to request the reward earned up to that moment.</p>
                   </div>
                 </div>

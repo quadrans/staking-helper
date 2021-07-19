@@ -37,7 +37,7 @@
                 <p class="mb-0 font-italic"><b>QDT</b></p>
               </div>
               <div class="col-12 col-sm-10">
-                <p class="mb-0">The minimum amount of QDT you can stake is <b>10.000 Quadrans Token</b>. You can stake/unstake you tokens whenever you want but for every 
+                <p class="mb-0">The minimum amount of QDT you can stake is <b>10.000 Quadrans Token</b>. You can stake/unstake your tokens whenever you want but for every 
                 movement you need to pay a fee to the Ethereum network.
                 </p>
               </div>
@@ -124,7 +124,7 @@
                         <small>Website</small>
                       </div>
                     </a>
-                    <a href="https://t.com/quadrans" target="_blank" class="violet mb-auto mx-2">
+                    <a href="https://t.me/quadrans" target="_blank" class="violet mb-auto mx-2">
                       <div class="card-link d-flex text-center" style="width: 125">
                         <i class="fab fa-telegram violet mt-auto" style="font-size: 32px"></i>
                         <small>Community</small>
