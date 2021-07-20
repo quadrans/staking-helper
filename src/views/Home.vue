@@ -177,7 +177,7 @@
           </div>
           <hr />
           <div class="row">
-            <div class="col-12 col-md-6" v-if="staking_qdt === 0">
+            <div class="col-12" v-if="staking_qdt === 0">
               <h3 class="title">Stake</h3>
               <b-input
                 placeholder="Write the amount to stake here (min. 10000 QDT)"
@@ -211,7 +211,7 @@
                 </b-message>
               </div>
             </div>
-            <div class="col-12 col-md-6" v-if="staking_qdt > 0">
+            <div class="col-12" v-if="staking_qdt > 0">
               <h3 class="title">Withdraw</h3>
                 <p style="line-height: 22px !important">You will withdraw all the tokens + reward.</p>
               <div class="text-center">
