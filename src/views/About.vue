@@ -7,8 +7,8 @@
             <div class="row">
               <div class="col-12 col-lg-8 mb-3 mb-lg-0">
                 <h1>What is <b>Quadrans Token Staking Reward? </b></h1>
-                <p>Quadrans Tokens Staking refers to holding your cryptocurrency funds in a smart contract and receive a reward after a period of time. 
-                   The QDTs will be locked and you will be rewarded for your activity by the Quadrans Foundation.
+                <p>Quadrans Token Staking refers to holding your cryptocurrency funds in a smart contract and receive a reward after a period of time. 
+                   The QDT will be locked and you will be rewarded for your activity by the Quadrans Foundation.
                 </p>
                 <router-link to="/">
                   <b-button
@@ -26,8 +26,8 @@
                 <p class="mb-0 font-italic"><b>APY</b></p>
               </div>
               <div class="col-12 col-sm-10">
-                <p class="mb-0">Staking provides a way of making an income in QDT. For your partecipation in Quadrans Tokens Staking the Foundation recognize 
-                    you an <b>yearly reward of 14%</b>.
+                <p class="mb-0">
+                  Staking provides a way of making an income in QDTs. For your partecipation in Quadrans Tokens Staking the Foundation recognize you an <b>yearly reward of 14%</b>.
                 </p>
               </div>
             </div>
@@ -37,8 +37,8 @@
                 <p class="mb-0 font-italic"><b>QDT</b></p>
               </div>
               <div class="col-12 col-sm-10">
-                <p class="mb-0">The minimum amount of QDT you can stake is <b>10.000 Quadrans Token</b>. You can stake/unstake your tokens whenever you want but for every 
-                movement you need to pay a fee to the Ethereum network.
+                <p class="mb-0">
+                  The minimum amount of QDT you can stake is <b>10.000 Quadrans Token</b>. You can stake/unstake your tokens whenever you want but for every movement you need to pay a fee to the Ethereum network.
                 </p>
               </div>
             </div>
@@ -53,12 +53,12 @@
           <div class="col-12">
             <div class="row">
               <div class="col-12 col-lg-6 my-auto pr-xl-5 text-left">
-                <h1 class="white">Stake <b>requirements</b></h1>
+                <h1 class="white">Staking <b>requirements</b></h1>
                 <div style="border-left: 8px solid #13fac8; padding-left: 15px;">
                   <h5 class="white font-weight-bold" style="text-transform:none;">Getting started is very easy!</h5>
                   <p class="white mb-3 mb-lg-0">
-                    Quadrans Token holders can stake their QDT directly from their <b>MetaMask</b> application. You’ll need some <b>ETH</b> (Ether) 
-                    to pay the transactions required to confirm the use of this tool and Stake/Unstake your Tokens.
+                    Quadrans Token holders can stake QDT directly from their <b>MetaMask</b> application. You’ll need some <b>ETH</b> (Ether) 
+                    to pay the transactions required to confirm this tool usage and Stake/Unstake your Tokens.
                   </p>
                 </div>
               </div>
@@ -93,8 +93,7 @@
               the major challenges that blockchain ecosystems are facing today such as security, interoperability, scalability and high operational costs.
             </p>
             <p>
-              With a mind focused on the needs of Industry, complex supply chains, IOT devices, Quadrans finds its roots in a fork of the Go-Ethereum’s source code. 
-              To keep the cost of operations balanced, the distribution of Quadrans Coin (QDC) required to write on the blockchain is carried out through a minting protocol.
+              Focusing on the Industry needs, complex supply chains, IoT devices, Quadrans finds its roots in a fork of the Go-Ethereum’s source code. To keep the cost of operations balanced, the distribution of Quadrans Coin (QDC) required to write on the blockchain is carried out through a minting protocol.
             </p>
           </div>
           <div class="col-12 col-lg-6">

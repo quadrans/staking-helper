@@ -8,7 +8,7 @@
         <div class="row justify-content-center first-section">
           <div class="col-12 col-md-6 text-center">
             <h1>Stake <b>Quadrans Token</b></h1>
-            <p>Stake is a process that allows Quadrans Token holders to <b>receive a reward for ther loyalty.</b></p>
+            <p>Stake is a process that allows Quadrans Token holders to <b>receive a reward for their loyalty.</b></p>
           </div>
         </div>
         <div class="row justify-content-center">
@@ -16,14 +16,14 @@
             <div class="mr-3">
               <h1 class="violet count mb-0"><b>14%</b></h1>
               <p class="mb-0 font-italic"><b>APY</b></p>
-              <p>you can earn</p>
+              <p>received</p>
             </div>
           </div>
           <div class="col text-center d-flex justify-content-start">
             <div class="ml-3">
               <h1 class="violet count mb-0"><b>10k</b></h1>
-              <p class="mb-0 font-italic"><b>QDT minimum</b></p>
-              <p>to join the staking</p>
+              <p class="mb-0 font-italic"><b>minimum QDT</b></p>
+              <p>to start staking</p>
             </div>
           </div>
         </div>
@@ -74,14 +74,14 @@
                   <img class="img-fluid py-3" src="/img/reward.png" style="max-height: 300px;">
                 </div>
                 <div class="col-12 col-lg-6 my-auto pr-xl-5 text-lg-right text-left">
-                  <h1 class="white">Earning <b>Reward</b></h1>
+                  <h1 class="white">Receiving <b>Reward</b></h1>
                   <div class="d-none" style="border-right: 8px solid #13fac8; padding-right: 15px;">
-                    <h5 class="white font-weight-bold" style="text-transform:none;">Participate in staking to receive a 14% annual reward based on the duration of your staking.</h5>
-                    <p class="white mb-0">The more time you participate, the more Quadrans Token you will be awarded at the end.</p>
+                    <h5 class="white font-weight-bold" style="text-transform:none;">Participate in staking to receive a 14% annual reward based on you locking time.</h5>
+                    <p class="white mb-0">The more time you participate, the more Quadrans Tokens you will be awarded at the end.</p>
                   </div> 
                   <div class="d-lg-block" style="border-left: 8px solid #13fac8; padding-left: 15px;">
-                    <h5 class="white font-weight-bold" style="text-transform:none;">Participate in staking to receive a 14% annual reward based on the duration of your staking.</h5>
-                    <p class="white mb-0">The more time you participate, the more Quadrans Token you will be awarded at the end.</p>
+                    <h5 class="white font-weight-bold" style="text-transform:none;">Participate in staking to receive a 14% annual reward based on you locking time.</h5>
+                    <p class="white mb-0">The more time you participate, the more Quadrans Tokens you will be awarded at the end.</p>
                   </div> 
                 </div>
               </div>
@@ -93,8 +93,8 @@
                 <div class="col-12 col-lg-6 my-auto pr-xl-5 text-left order-2 order-lg-1">
                   <h1 class="white">Fair <b>Exiting</b></h1>
                   <div style="border-left: 8px solid #13fac8;padding-left: 15px;">
-                    <h5 class="white font-weight-bold" style="text-transform:none;">Quadrans does not place limits or obligations on participation.</h5>
-                    <p class="white mb-0">At any time you can add and remove the QDT in staking to request the reward earned up to that moment.</p>
+                    <h5 class="white font-weight-bold" style="text-transform:none;">Quadrans does not place time limits or obligations on participants.</h5>
+                    <p class="white mb-0">At any time you can add or remove the QDTs staked and the received rewards.</p>
                   </div>
                 </div>
                 <div class="col-12 col-lg-6 justify-content-center d-flex order-1 order-lg-2">
@@ -108,11 +108,10 @@
       <div class="container-fluid row-after-blue" id="stakenow">
         <div class="row justify-content-center">
           <div class="col text-center">
-            <h2>Connect your wallet to <br /><b>Quadrans Staking Platform</b></h2>
+            <h2>Connect your wallet to the<br /><b>Quadrans Staking Platform</b></h2>
               <div v-if="metamaskFound">
                 <p style="margin-top: 20px !important">
-                  Please connect your Metamask wallet first,
-                  click below button to initiate connection.
+                  Please click the button below to connect your Metamask wallet.
                 </p>
                 <b-button
                   type="fill"
