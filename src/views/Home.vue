@@ -121,7 +121,7 @@
                   >CONNECT METAMASK</b-button
                 >
                 <p style="margin-top: 20px !important">
-                  For more information about Quadrans Staking and requrements please read the <router-link to="/about">How it works page</router-link>.
+                  For more information about Quadrans Staking and requirements please read the <router-link to="/about">How it works page</router-link>.
                 </p>
               </div>
               <div v-if="!metamaskFound">
@@ -140,7 +140,7 @@
                   >
                 </a>
                 <p style="margin-top: 20px !important">
-                  For more information about Quadrans Staking and requrements please read the <router-link to="/about">How it works page</router-link>.
+                  For more information about Quadrans Staking and requirements please read the <router-link to="/about">How it works page</router-link>.
                 </p>
               </div>
           </div>
