@@ -8,7 +8,7 @@
               <div class="col-12 col-lg-8 mb-3 mb-lg-0">
                 <h1>What is <b>Quadrans Token Staking Reward? </b></h1>
                 <p>Quadrans Tokens Staking refers to holding your cryptocurrency funds in a smart contract and receive a reward after a period of time. 
-                   The QDT will be locked and for your activity you will be rewarded by the Quadrans Foundation in return.
+                   The QDTs will be locked and you will be rewarded for your activity by the Quadrans Foundation.
                 </p>
                 <router-link to="/">
                   <b-button
