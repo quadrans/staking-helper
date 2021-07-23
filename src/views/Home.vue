@@ -8,7 +8,7 @@
         <div class="row justify-content-center first-section">
           <div class="col-12 col-md-6 text-center">
             <h1>Stake <b>Quadrans Token</b></h1>
-            <p>Stake is a process that allows Quadrans Token holders to <b>receive a reward for their loyalty.</b></p>
+            <p>Staking is a process that allows Quadrans Token holders to <b>receive a reward for their loyalty.</b></p>
           </div>
         </div>
         <div class="row justify-content-center">
@@ -76,11 +76,11 @@
                 <div class="col-12 col-lg-6 my-auto pr-xl-5 text-lg-right text-left">
                   <h1 class="white">Receiving <b>Reward</b></h1>
                   <div class="d-none" style="border-right: 8px solid #13fac8; padding-right: 15px;">
-                    <h5 class="white font-weight-bold" style="text-transform:none;">Participate in staking to receive a 14% annual reward based on you locking time.</h5>
+                    <h5 class="white font-weight-bold" style="text-transform:none;">Participate in the staking process to receive a 14% annual reward based on you locking time.</h5>
                     <p class="white mb-0">The more time you participate, the more Quadrans Tokens you will be awarded at the end.</p>
                   </div> 
                   <div class="d-lg-block" style="border-left: 8px solid #13fac8; padding-left: 15px;">
-                    <h5 class="white font-weight-bold" style="text-transform:none;">Participate in staking to receive a 14% annual reward based on you locking time.</h5>
+                    <h5 class="white font-weight-bold" style="text-transform:none;">Participate in the staking process to receive a 14% annual reward based on you locking time.</h5>
                     <p class="white mb-0">The more time you participate, the more Quadrans Tokens you will be awarded at the end.</p>
                   </div> 
                 </div>
