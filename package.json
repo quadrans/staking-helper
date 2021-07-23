@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build && rm dist/service-worker.js && rm dist/manifest.json",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -14,7 +14,6 @@
     "core-js": "^3.6.5",
     "e": "^0.2.0",
     "prettier": "^1.19.1",
-    "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vue-scrollto": "^2.20.0",
