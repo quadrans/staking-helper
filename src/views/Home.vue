@@ -342,7 +342,7 @@ export default {
       app.qdt_balance = await app.qdt_contract.methods
         .balanceOf(app.account)
         .call();
-      app.qdt_balance = app.web3.utils.fromWei(app.qdt_balance);
+      app.qdt_balance = parseFloat(app.web3.utils.fromWei(app.qdt_balance));
 
       // Getting staking info from Staking Contract
       app.staking = await app.staking_contract.methods
