@@ -154,7 +154,7 @@
           <div style="text-align: left">
             <h3>
               <b>Welcome</b><br />
-            <p class="staking">Your Ethereum wallet is: <b>{{ account }}</b></p>
+            <p class="staking">Your Ethereum wallet is: <a :href="'https://monitor.quadrans.io/#/profile/' + account"><b class="violet">{{ account }} <i class="ml-2 fas fa-external-link-alt"></i></b></a></p>
               
             </h3>
           </div>

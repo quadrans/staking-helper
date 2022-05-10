@@ -5,7 +5,7 @@
     <nav class="navbar navbar-light navbar-expand-lg py-0 fixed-top">
       <a class="navbar-brand" href="/">
         <div id="logo">
-          <img src="https://quadrans.io/assets/brand/logo_quadrans_color.svg" alt="Quadrans Foundation" class="logo">
+          <img src="https://quadrans.foundation/assets/brand/logo_quadrans_color.svg" alt="Quadrans Foundation" class="logo">
         </div>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,6 +21,9 @@
           </li>
           <li class="nav-item text-center">
             <router-link to="/about" class="nav-link" >How it works<div></div></router-link>
+          </li>
+          <li class="nav-item text-center">
+            <a href="https://monitor.quadrans.io" class="nav-link" target="_blank">Staking Monitor <i class="ml-2 fas fa-external-link-alt violet"></i><div></div></a>
           </li>
         </ul>
       </div>

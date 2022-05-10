@@ -16,6 +16,13 @@
                     >Stake NOW</b-button
                   > 
                 </router-link>             
+                <a href="https://monitor.quadrans.io/" target="_blank">
+                  <b-button
+                    type="fill"
+                    >Staking Monitor</b-button
+                  > 
+                </a>             
+
               </div>
             </div>
           </div>
