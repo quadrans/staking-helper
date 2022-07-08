@@ -9,6 +9,11 @@ Vue.config.productionTip = false
 Vue.use(Buefy)
 Vue.use(VueScrollTo)
 
+import VueApexCharts from 'vue-apexcharts'
+Vue.use(VueApexCharts)
+
+Vue.component('apexchart', VueApexCharts)
+
 new Vue({
   router,
   render: h => h(App)

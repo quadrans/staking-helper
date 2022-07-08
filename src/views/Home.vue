@@ -2,7 +2,6 @@
 
 
 <div class="container-fluid px-0 pt-0" >
-
     <div v-if="!account">
       <div class="container-fluid bg-map-grey first-section row-before-blue">
         <div class="row justify-content-center first-section">
@@ -28,7 +27,7 @@
           </div>
         </div>
       </div>
-   
+
       <div class="container-fluid bg-blue-before p-0"><img class="img-fluid" src="/img/oblique_top.png"></div>
       <div class="bg-blue container-fluid">
         <div class="row top-negative-150">
@@ -45,7 +44,7 @@
               >
             </a>
           </div>
-        </div>   
+        </div>
         <div class="row">
           <div class="col-12">
             <div class="row">
@@ -78,11 +77,11 @@
                   <div class="d-none" style="border-right: 8px solid #13fac8; padding-right: 15px;">
                     <h5 class="white font-weight-bold" style="text-transform:none;">Participate in the staking process to receive a 14% annual reward based on your locking time.</h5>
                     <p class="white mb-0">The more time you participate, the more Quadrans Tokens you will be awarded at the end.</p>
-                  </div> 
+                  </div>
                   <div class="d-lg-block" style="border-left: 8px solid #13fac8; padding-left: 15px;">
                     <h5 class="white font-weight-bold" style="text-transform:none;">Participate in the staking process to receive a 14% annual reward based on your locking time.</h5>
                     <p class="white mb-0">The more time you participate, the more Quadrans Tokens you will be awarded at the end.</p>
-                  </div> 
+                  </div>
                 </div>
               </div>
           </div>
@@ -147,107 +146,37 @@
       </div>
     </div>
 
-
-    <div class="container-fluid bg-map-grey first-section row-before-blue" v-if="account">
-      <div class="first-section">
-        <div class="card card-q">
-          <div style="text-align: left">
-            <h3>
-              <b>Welcome</b><br />
-            <p class="staking">Your Ethereum wallet is: <a :href="'https://monitor.quadrans.io/#/profile/' + account"><b class="violet">{{ account }} <i class="ml-2 fas fa-external-link-alt"></i></b></a></p>
-              
-            </h3>
-          </div>
-          <hr />
-          <div class="row">
-            <div class="col-12 col-md">
-              <h3 class="title">QDT Balance</h3>
-              <p class="staking">{{ qdt_balance }} QDT</p>
-            </div>
-            <div class="col-12 col-md">
-              <h3 class="title">In Staking</h3>
-              <p class="staking">{{ staking_qdt }} QDT</p>
-            </div>
-            <div class="col-12 col-md" v-if="staking.stake">
-              <h3 class="title">Reward</h3>
-              <p class="staking" v-if="staking.stake > 0">{{ interest }} QDT</p>
-              <p class="staking" v-if="staking.stake == 0">Nothing in stake</p>
-            </div>
-          </div>
-          <hr />
-          <div class="row">
-            <div class="col-12" v-if="staking_qdt === 0">
-              <h3 class="title">Stake</h3>
-              <b-input
-                placeholder="Write the amount to stake here (min. 10000 QDT)"
-                min="10000"
-                type="number"
-                v-model="toStake"
-              ></b-input>
-              <div class="text-center">
-              <b-button
-                v-if="toStake <= qdt_balance && !isApproving && !isStaking"
-                type="fill"
-                v-on:click="stake"
-                >STAKE</b-button
-              >
-              </div>
-              <div v-if="isApproving">
-                <b-message type="is-warning" aria-close-label="Close message">
-                  Please approve following transaction in order to stake the
-                  tokens and wait until confirmed...
-                </b-message>
-              </div>
-              <div v-if="isStaking">
-                <b-message type="is-info" aria-close-label="Close message">
-                  Please confirm the <b>staking transaction</b> and wait until
-                  the transaction is confirmed...
-                </b-message>
-              </div>
-              <div v-if="toStake > qdt_balance">
-                <b-message type="is-danger" aria-close-label="Close message">
-                  Can't stake more than your balance!
-                </b-message>
-              </div>
-            </div>
-            <div class="col-12" v-if="staking_qdt > 0">
-              <h3 class="title">Withdraw</h3>
-                <p style="line-height: 22px !important">You will withdraw all the tokens + reward.</p>
-              <div class="text-center">
-              <b-button
-                type="fill mx-auto"
-                v-if="!isWithdrawing"
-                v-on:click="withdraw"
-                >WITHDRAW</b-button
-              >
-              </div>
-              <div v-if="isWithdrawing">
-                <b-message type="is-info" aria-close-label="Close message">
-                  Please confirm the <b>withdraw transaction</b> and wait until
-                  is confirmed...
-                </b-message>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <StakerDashboard v-else
+      :walletAddress="account"
+      :qdtBalance="qdt_balance"
+      :staking="staking_qdt"
+      :interest="interest"
+      :isStaking="isStaking"
+      :isWithdrawing="isWithdrawing"
+      :isApproving="isApproving"
+      v-on:stake="onStake"
+      v-on:withdraw="withdraw"
+    ></StakerDashboard>
 </div>
-
-
 </template>
 
 <script>
+
+import StakerDashboard from '@/components/StakerDashboard.vue'
+
 var Web3 = require("web3");
 const ABI_QDT = require("../abi/qdt.json");
 const ABI_STAKING = require("../abi/staking.json");
 
 export default {
   name: "Home",
-  components: {},
+  components: {
+    StakerDashboard
+  },
   data() {
     return {
       web3: new Web3(window.ethereum),
+      initialized: false,
       account: "",
       qdt_balance: 0,
       metamaskFound: false,
@@ -295,6 +224,8 @@ export default {
       } catch (e) {
         console.log("Wallet errored.");
       }
+      window.ethereum.enable();
+      this.initialized=true;
     } else {
       app.metamaskFound = false;
     }
@@ -350,11 +281,11 @@ export default {
         .call();
       // Getting interest from Staking Contract
       if (app.staking.stake > 0) {
-        app.staking_qdt = app.web3.utils.fromWei(app.staking.stake);
+        app.staking_qdt = Number.parseFloat(app.web3.utils.fromWei(app.staking.stake));
         app.interest = await app.staking_contract.methods
           .getInterest()
           .call({ from: app.account });
-        app.interest = app.web3.utils.fromWei(app.interest);
+        app.interest = Number.parseFloat(app.web3.utils.fromWei(app.interest));
       }
     },
     async approve() {
@@ -380,6 +311,7 @@ export default {
     },
     async stake() {
       const app = this;
+      console.log(app.qdt_balance,"----",app.toStake)
       if (app.qdt_balance >= app.toStake && app.toStake >= 10000) {
         let toStake = app.web3.utils.toWei(app.toStake);
         try {
@@ -406,6 +338,10 @@ export default {
         alert("Can't stake less than 10000 QDT");
       }
     },
+    onStake(toStake) {
+      this.toStake=toStake;
+      this.stake();
+    },
     async withdraw() {
       const app = this;
       try {
@@ -421,6 +357,11 @@ export default {
         app.isWithdrawing = false;
         alert(e.message);
       }
+    },
+  },
+  watch: {
+    initialized(newV,oldV) {
+        this.connect()
     },
   },
 };

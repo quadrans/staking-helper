@@ -13,22 +13,22 @@
       </button>
 
       <!-- START NAVBAR LINKS -->
-      
+
       <div class="collapse navbar-collapse mt-auto" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto ml-lg-3 mt-auto mr-auto">
             <li class="nav-item text-center">
             <router-link to="/" class="nav-link" >Home<div></div></router-link>
           </li>
           <li class="nav-item text-center">
-            <router-link to="/about" class="nav-link" >How it works<div></div></router-link>
+            <router-link to="/statistics" class="nav-link" >Statistics<div></div></router-link>
           </li>
           <li class="nav-item text-center">
-            <a href="https://monitor.quadrans.io" class="nav-link" target="_blank">Staking Monitor <i class="ml-2 fas fa-external-link-alt violet"></i><div></div></a>
+            <router-link to="/about" class="nav-link" >How it works<div></div></router-link>
           </li>
         </ul>
       </div>
 
-     
+
       <!-- END NAVBAR LINKS -->
     </nav>
 </div>
@@ -104,7 +104,7 @@ hr {
   background-color: #FFFFFF;
 }
 
-.bg-map-grey{ 
+.bg-map-grey{
   background-image: url(/img/map.png);
   background-repeat: no-repeat;
   background-position: center;
