@@ -6,89 +6,87 @@
       <h1 class="text-center"><b>Staking statistics</b></h1>
       </div>
     </div>
-    <div class="row">
-      <div class="col-7">
-        <div class="card card-q px-0 py-0">
-            <div class="card-body py-4">
-              <div class="text-center">
-                <apexchart
-                  type="candlestick"
-                  height="250"
-                  :options="ChartConfigs.globalMonthlyPoolsize_cfg"
-                  :series="globalMonthlyPoolsize_data">
-                </apexchart>
-              </div>
-            </div>
+    <div class="row py-3">
+      <div class="col-12 col-lg-7 order-2 order-lg-1 mb-4">
+        <div class="card h-100 card-q px-0 pb-0 pt-2 my-0">
+          <div class="card-body py-1">
+            <h4 class="card-title">Monthly Pool Size</h4>
+          </div>
+          <apexchart
+            type="bar"
+            width="100%"
+            height="280"
+            :options="ChartConfigs.globalMonthlyPoolsize_cfg"
+            :series="globalMonthlyPoolsize_data">
+          </apexchart>
         </div>
       </div>
-      <div class="col-5">
-        <div class="row">
-
-          <div class="col-6">
-            <div class="card card-q px-0 py-0">
+      <div class="col-12 col-lg-5 order-1 order-lg-2">
+        <div class="row h-50">
+          <div class="col-12 col-lg-6 mb-4">
+            <div class="card h-100 card-q px-0 pb-0 pt-2">
                 <div class="card-body py-1">
+                  <h4 class="card-title">Total staked</h4>
                   <p style="font-size: 1.3rem !important;" class="my-1">{{ formatter.QDTAmount(globals.in_staking) }} QDT</p>
-                  <h5 class="card-title">Total staked</h5>
                 </div>
             </div>
           </div>
-          <div class="col-6">
-            <div class="card card-q px-0 py-0">
+          <div class="col-12 col-lg-6 mb-4">
+            <div class="card h-100 card-q px-0 pb-0 pt-2">
                 <div class="card-body py-1">
+                  <h4 class="card-title">Active stakers</h4>
                   <p style="font-size: 1.3rem !important;" class="my-1">{{ globals.active_stakers }}</p>
-                  <h5 class="card-title">Active stakers</h5>
-                </div>
-            </div>
-          </div>
-
-          <div class="col-6">
-            <div class="card card-q px-0 py-0">
-                <div class="card-body py-1">
-                  <p style="font-size: 1.3rem !important;" class="my-1">{{ formatter.QDTAmount(globals.unissued_interests) }} QDT</p>
-                  <h5 class="card-title">Uncollected rewards</h5>
-                </div>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="card card-q px-0 py-0">
-                <div class="card-body py-1">
-                  <p style="font-size: 1.3rem !important;" class="my-1">{{ formatter.QDTAmount(globals.issued_interests) }} QDT</p>
-                  <h5 class="card-title">Collected rewards</h5>
                 </div>
             </div>
           </div>
         </div>
-
+        <div class="row h-50">
+          <div class="col-12 col-lg-6 mb-4">
+            <div class="card h-100 card-q px-0 pb-0 pt-2">
+                <div class="card-body py-1">
+                  <h4 class="card-title">Uncollected rewards</h4>
+                  <p style="font-size: 1.3rem !important;" class="my-1">{{ formatter.QDTAmount(globals.unissued_interests) }} QDT</p>
+                </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 mb-4">
+            <div class="card h-100 card-q px-0 pb-0 pt-2">
+                <div class="card-body py-1">
+                  <h4 class="card-title">Collected rewards</h4>
+                  <p style="font-size: 1.3rem !important;" class="my-1">{{ formatter.QDTAmount(globals.issued_interests) }} QDT</p>
+                </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-4">
-        <div class="card card-q px-0 py-0">
-            <div class="card-body py-4">
-              <div class="text-center">
-                <apexchart
-                  type="pie"
-                  height="250"
-                  ref="poolSharesChart"
-                  :options="ChartConfigs.globalPoolShares_cfg"
-                  :series="globalPoolShares_data">
-                </apexchart>
-              </div>
-            </div>
+      <div class="col-12 col-lg-4 mb-4">
+        <div class="card h-100 card-q px-0 pb-0 pt-2 my-0">
+          <div class="card-body py-1">
+            <h4 class="card-title">Pool shares</h4>
+          </div>
+          <apexchart
+            type="pie"
+            width="100%"
+            ref="poolSharesChart"
+            :options="ChartConfigs.globalPoolShares_cfg"
+            :series="globalPoolShares_data">
+          </apexchart>
         </div>
       </div>
-      <div class="col-8">
-        <div class="card card-q px-0 py-0">
-            <div class="card-body py-4">
-              <div class="text-center">
-                <apexchart
-                  type="bar"
-                  height="250"
-                  :options="ChartConfigs.globalMonthlyActivity_cfg"
-                  :series="globalMonthlyActivity_data">
-                </apexchart>
-              </div>
-            </div>
+      <div class="col-12 col-lg-8 mb-4">
+        <div class="card h-100 card-q px-0 pb-0 pt-2 my-0">
+          <div class="card-body py-1">
+            <h4 class="card-title">Monthly Activity</h4>
+          </div>
+          <apexchart
+            type="bar"
+            width="100%"
+            height="340"
+            :options="ChartConfigs.globalMonthlyActivity_cfg"
+            :series="globalMonthlyActivity_data">
+          </apexchart>
         </div>
       </div>
     </div>
@@ -97,13 +95,11 @@
         <div class="card card-q px-0 py-0">
             <div class="card-body py-4">
               <h4>Top 10 stakers</h4>
-              <div class="text-center">
                 <b-table
                 :data="topStakersData"
                 :columns="TablesConfigs.topStakersColums"
                 >
                 </b-table>
-              </div>
             </div>
         </div>
       </div>

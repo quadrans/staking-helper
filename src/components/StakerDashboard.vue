@@ -3,53 +3,53 @@
     <!-- Header start -->
     <div class="row">
       <div class="col-12 my-4">
-      <h1 class="text-center"><b>Your wallet address:</b> {{ walletAddress }}</h1>
+      <h1 class="text-center text-break"><b>Your wallet address:</b> {{ walletAddress }}</h1>
       </div>
     </div>
     <!-- Header end -->
-    <div class="row">
-      <div class="col-6">
-
-        <div class="row">
-          <div class="col-6">
-            <div class="card card-q px-0 py-0">
+    <div class="row py-3">
+      <div class="col-12 col-lg-6 order-2 order-lg-1">
+        <div class="row h-50">
+          <div class="col-12 col-lg-6 mb-4">
+            <div class="card h-100 card-q px-0 pb-0 pt-2">
                 <div class="card-body py-1">
+                  <h4 class="card-title">Wallet Balance</h4>
                   <p style="font-size: 1.3rem !important;" class="my-1">{{ formatter.QDTAmount(qdtBalance)  }} QDT</p>
-                  <h5 class="card-title">Wallet Balance</h5>
                 </div>
             </div>
           </div>
-          <div class="col-6">
-            <div class="card card-q px-0 py-0">
+          <div class="col-12 col-lg-6 mb-4">
+            <div class="card h-100 card-q px-0 pb-0 pt-2">
                 <div class="card-body py-1">
+                  <h4 class="card-title">In staking</h4>
                   <p style="font-size: 1.3rem !important;" class="my-1">{{ formatter.QDTAmount(staking) }}</p>
-                  <h5 class="card-title">In staking</h5>
                 </div>
             </div>
           </div>
-
-          <div class="col-6">
-            <div class="card card-q px-0 py-0">
+        </div>
+        <div class="row h-50">
+          <div class="col-12 col-lg-6 mb-4">
+            <div class="card h-100 card-q px-0 pb-0 pt-2">
                 <div class="card-body py-1">
+                  <h4 class="card-title">Uncollected rewards</h4>
                   <p style="font-size: 1.3rem !important;" class="my-1">{{ formatter.QDTAmount(interest) }} QDT</p>
-                  <h5 class="card-title">Uncollected rewards</h5>
                 </div>
             </div>
           </div>
-          <div class="col-6">
-            <div class="card card-q px-0 py-0">
+          <div class="col-12 col-lg-6 mb-4">
+            <div class="card h-100 card-q px-0 pb-0 pt-2">
                 <div class="card-body py-1">
+                  <h4 class="card-title">Collected rewards</h4>
                   <p style="font-size: 1.3rem !important;" class="my-1">{{ formatter.QDTAmount(totalCollected) }} QDT</p>
-                  <h5 class="card-title">Collected rewards</h5>
                 </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-6">
-        <div v-if="staking > 0" class="card card-q px-0 py-0">
+      <div class="col-12 col-lg-6 order-1 order-lg-2 mb-4">
+        <div v-if="staking > 0" class="card h-100 card-q px-0 pb-0 pt-2">
             <div class="card-body py-1">
-              <h3 class="title">Withdraw</h3>
+              <h4>Withdraw</h4>
                 <p style="line-height: 22px !important">You will withdraw all the tokens + reward.</p>
               <div class="text-center">
               <b-button
@@ -67,34 +67,41 @@
               </div>
             </div>
         </div>
-        <div v-else class="card card-q px-0 py-0">
+        <div v-else class="card h-100 card-q px-0 py-0">
             <div class="card-body py-1">
-              <h3 class="title">Stake</h3>
-                <b-input
-                  placeholder="Write the amount to stake here (min. 10000 QDT)"
-                  min="10000"
-                  type="number"
-                  v-model="toStake"
-                ></b-input>
-                <h4>Estimated rewards</h4>
-                <p>
-                  30 days rewards: <span> {{ oneMonth_est_rewards }}</span> QDT<br/>
-                  90 days rewards: <span> {{ threeMonths_est_rewards }}</span> QDT <br/>
-                  1 year rewards: <span> {{ oneYear_est_rewards }}</span> QDT <br/>
-                </p>
-              <div class="text-center">
-              <b-button
-                type="fill mx-auto"
-                v-if="!isWithdrawing"
-                v-on:click="stake"
-                >STAKE</b-button
-              >
-              </div>
-              <div v-if="isStaking">
-                <b-message type="is-info" aria-close-label="Close message">
-                  Please confirm the <b>withdraw transaction</b> and wait until
-                  is confirmed...
-                </b-message>
+              <div class="row">
+                <div class="col">
+                  <h4>Stake</h4>
+                  <p class="mb-0"> The minimum amount of QDT you can stake is <b>10.000 Quadrans Token</b>.</p>
+                  <div class="form-inline">
+                    <b-input
+                      placeholder="Write the amount to stake here (min. 10000 QDT)"
+                      min="10000"
+                      type="number"
+                      v-model="toStake"
+                      style="max-width: 80%; width: 100%"
+                    ></b-input>
+                      <b-button
+                        type="fill"
+                        v-if="!isWithdrawing"
+                        v-on:click="stake"
+                        >STAKE</b-button
+                      >
+                  </div>
+                  <h4>Estimated rewards</h4>
+                  <p>
+                    30 days rewards: <span> {{ oneMonth_est_rewards }}</span> QDT<br/>
+                    90 days rewards: <span> {{ threeMonths_est_rewards }}</span> QDT <br/>
+                    1 year rewards: <span> {{ oneYear_est_rewards }}</span> QDT <br/>
+                  </p>
+                  <div v-if="isStaking">
+                    <b-message type="is-info" aria-close-label="Close message">
+                      Please confirm the <b>withdraw transaction</b> and wait until
+                      is confirmed...
+                    </b-message>
+                  </div>
+
+                </div>
               </div>
             </div>
         </div>
@@ -102,7 +109,7 @@
   </div>
   <div class="row">
     <div class="col-12">
-      <div class="card card-q px-0 py-0">
+      <div class="card card-q px-0 pb-0 pt-2">
           <div class="card-body py-4">
             <h3 class="title mb-2">Activity history</h3>
             <b-table

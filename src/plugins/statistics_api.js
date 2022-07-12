@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = "http://127.0.0.1:8000"
+const BASE_URL = "https://monitorapi.quadrans.io"
 
 const GETGLOBALSTATISTICS_PATH = "/v1/statistics/global/"
 const GETSHARES_PATH = "/v1/statistics/shares/"

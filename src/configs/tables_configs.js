@@ -4,7 +4,8 @@ const TablesConfigs = {
   topStakersColums: [
     {
       field: 'staker_address',
-      label: 'Staker'
+      label: 'Staker',
+      numeric: true
     },
     {
       field: 'staked_amount',
