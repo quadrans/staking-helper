@@ -95,11 +95,34 @@
         <div class="card card-q px-0 py-0">
             <div class="card-body py-4">
               <h4>Top 10 stakers</h4>
-                <b-table
+                <!-- <b-table
                 :data="topStakersData"
                 :columns="TablesConfigs.topStakersColums"
                 >
-                </b-table>
+                </b-table> -->
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <td>Staker</td>
+                      <td>In staking</td>
+                      <td>Accured rewards</td>
+                      <td>Staking period</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="staker in topStakersData" :key="staker.staker_address">
+                      <td>
+                        <a :href="`https://etherscan.io/address/${staker.staker_address}`"
+                        target="_blank">
+                          {{ staker.staker_address }}
+                        </a>
+                      </td>
+                      <td>{{ staker.staked_amount }}</td>
+                      <td>{{ staker.accured_interests }}</td>
+                      <td>{{ staker.interest_days }}</td>
+                    </tr>
+                  </tbody>
+                </table>
             </div>
         </div>
       </div>

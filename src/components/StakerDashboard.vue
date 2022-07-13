@@ -50,7 +50,13 @@
         <div v-if="staking > 0" class="card h-100 card-q px-0 pb-0 pt-2">
             <div class="card-body py-1">
               <h4>Withdraw</h4>
-                <p style="line-height: 22px !important">You will withdraw all the tokens + reward.</p>
+                <p style="line-height: 22px !important">
+                  You will withdraw all the tokens + reward.
+                </p>
+                <p style="line-height: 22px !important">
+                  <b> Total: </b> {{ toWithdraw }} QDT
+                </p>
+
               <div class="text-center">
               <b-button
                 type="fill mx-auto"
@@ -112,11 +118,31 @@
       <div class="card card-q px-0 pb-0 pt-2">
           <div class="card-body py-4">
             <h3 class="title mb-2">Activity history</h3>
-            <b-table
+            <!-- <b-table
               :data="stakerActivityData"
               :columns="TablesConfigs.stakerActivityColumns"
             >
-            </b-table>
+            </b-table> -->
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Date</th>
+                  <th scope="col">Block #</th>
+                  <th scope="col">Action</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Transaction hash</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="activity in stakerActivityData" :key="activity.block_number">
+                  <td>{{ activity.timestamp }}</td>
+                  <td v-html="activity.block_number"></td>
+                  <td>{{ activity.action }}</td>
+                  <td>{{ activity.amount }}</td>
+                  <td v-html="activity.tx_hash"></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
       </div>
     </div>
@@ -154,6 +180,7 @@ export default {
       oneYear_est_rewards: 0,
       stakerActivityData: [],
       totalCollected : 0,
+      toWithdraw: 0,
     };
   },
   methods: {
@@ -169,6 +196,7 @@ export default {
       this.stakerActivityData = []
       for(let i=0; i<r.stakes.length; i++) {
         let o = {
+          n : r.stakes[i].opening_block,
           action: "Stake",
           timestamp: (new Date(r.stakes[i].opening_timestamp).toLocaleString('default')),
           amount: FancyFormatter.QDTAmount(r.stakes[i].staked_amount)+" QDT",
@@ -179,6 +207,7 @@ export default {
       }
       for(let i=0; i<r.withdraws.length; i++) {
         let o = {
+          n: r.withdraws[i].closing_block,
           action: "Withdraw",
           timestamp: (new Date(r.withdraws[i].closing_timestamp).toLocaleString('default')),
           amount: FancyFormatter.QDTAmount(r.withdraws[i].withdrawed_amount)+" QDT",
@@ -187,7 +216,7 @@ export default {
         }
         this.stakerActivityData.push(o)
       }
-      this.stakerActivityData.sort( (a,b) => { return a.timestamp>b.timestamp; } )
+      this.stakerActivityData.sort( (a,b) => { return a.n>b.n; } )
 
     },
     async loadTotalCollected() {
@@ -209,6 +238,12 @@ export default {
       this.loadActivity()
       this.loadTotalCollected()
     },
+    staking(newStaking,oldStaking) {
+      this.toWithdraw = (newStaking+this.$props.interest).toFixed(2);
+    },
+    interest(newInterest,oldInterest) {
+      this.toWithdraw = (newInterest+this.$props.staking).toFixed(2);
+    }
   }
 };
 </script>
