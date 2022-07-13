@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="row py-3">
-      <div class="col-12 col-lg-7 order-2 order-lg-1 mb-4">
+      <div class="col-12 col-xl-7 order-2 order-lg-1 mb-4">
         <div class="card h-100 card-q px-0 pb-0 pt-2 my-0">
           <div class="card-body py-1">
             <h4 class="card-title">Monthly Pool Size</h4>
@@ -21,7 +21,7 @@
           </apexchart>
         </div>
       </div>
-      <div class="col-12 col-lg-5 order-1 order-lg-2">
+      <div class="col-12 col-xl-5 order-1 order-lg-2">
         <div class="row h-50">
           <div class="col-12 col-lg-6 mb-4">
             <div class="card h-100 card-q px-0 pb-0 pt-2">
@@ -61,7 +61,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-12 col-lg-4 mb-4">
+      <div class="col-12 col-lg-6 col-xl-4 mb-4">
         <div class="card h-100 card-q px-0 pb-0 pt-2 my-0">
           <div class="card-body py-1">
             <h4 class="card-title">Pool shares</h4>
@@ -75,7 +75,7 @@
           </apexchart>
         </div>
       </div>
-      <div class="col-12 col-lg-8 mb-4">
+      <div class="col-12 col-lg-6 col-xl-8 mb-4">
         <div class="card h-100 card-q px-0 pb-0 pt-2 my-0">
           <div class="card-body py-1">
             <h4 class="card-title">Monthly Activity</h4>
@@ -100,26 +100,26 @@
                 :columns="TablesConfigs.topStakersColums"
                 >
                 </b-table> -->
-                <table class="table">
+                <table class="table table-hover">
                   <thead>
                     <tr>
-                      <td>Staker</td>
-                      <td>In staking</td>
-                      <td>Accured rewards</td>
-                      <td>Staking period</td>
+                      <th scope="col">Staker</th>
+                      <th scope="col">In staking</th>
+                      <th scope="col" class="d-none d-lg-table-cell">Accured rewards</th>
+                      <th scope="col" class="d-none d-lg-table-cell">Staking period</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr v-for="staker in topStakersData" :key="staker.staker_address">
-                      <td>
-                        <a :href="`https://etherscan.io/address/${staker.staker_address}`"
+                      <th scope="row">
+                        <a :href="`https://etherscan.io/token/0x9adc7710e9d1b29d8a78c04d52d32532297c2ef3?a=${staker.staker_address}`"
                         target="_blank">
                           {{ staker.staker_address }}
                         </a>
-                      </td>
+                      </th>
                       <td>{{ staker.staked_amount }}</td>
-                      <td>{{ staker.accured_interests }}</td>
-                      <td>{{ staker.interest_days }}</td>
+                      <td class="d-none d-lg-table-cell">{{ staker.accured_interests }}</td>
+                      <td class="d-none d-lg-table-cell">{{ staker.interest_days }}</td>
                     </tr>
                   </tbody>
                 </table>

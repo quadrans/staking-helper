@@ -8,7 +8,7 @@
     </div>
     <!-- Header end -->
     <div class="row py-3">
-      <div class="col-12 col-lg-6 order-2 order-lg-1">
+      <div class="col-12 col-xl-6 order-2 order-xl-1">
         <div class="row h-50">
           <div class="col-12 col-lg-6 mb-4">
             <div class="card h-100 card-q px-0 pb-0 pt-2">
@@ -46,7 +46,7 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-lg-6 order-1 order-lg-2 mb-4">
+      <div class="col-12 col-xl-6 order-1 order-xl-2 mb-4">
         <div v-if="staking > 0" class="card h-100 card-q px-0 pb-0 pt-2">
             <div class="card-body py-1">
               <h4>Withdraw</h4>
@@ -85,7 +85,7 @@
                       min="10000"
                       type="number"
                       v-model="toStake"
-                      style="max-width: 80%; width: 100%"
+                      style="max-width: 70%; width: 100%"
                     ></b-input>
                       <b-button
                         type="fill"
@@ -123,14 +123,14 @@
               :columns="TablesConfigs.stakerActivityColumns"
             >
             </b-table> -->
-            <table class="table">
+            <table class="table table-hover">
               <thead>
                 <tr>
                   <th scope="col">Date</th>
                   <th scope="col">Block #</th>
                   <th scope="col">Action</th>
                   <th scope="col">Amount</th>
-                  <th scope="col">Transaction hash</th>
+                  <th class="d-none d-xl-table-cell" scope="col">Transaction hash</th>
                 </tr>
               </thead>
               <tbody>
@@ -139,7 +139,7 @@
                   <td v-html="activity.block_number"></td>
                   <td>{{ activity.action }}</td>
                   <td>{{ activity.amount }}</td>
-                  <td v-html="activity.tx_hash"></td>
+                  <td class="d-none d-xl-table-cell text-break" v-html="activity.tx_hash"></td>
                 </tr>
               </tbody>
             </table>

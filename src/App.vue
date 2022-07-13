@@ -26,6 +26,7 @@
             <router-link to="/about" class="nav-link" >How it works<div></div></router-link>
           </li>
         </ul>
+        <a href="https://quadrans.foundation" class="nav-link mb-auto text-center violet">Foundation <i class="ml-2 fas fa-external-link-alt"></i></a>
       </div>
 
 
