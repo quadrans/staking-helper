@@ -200,7 +200,7 @@ export default {
           action: "Stake",
           timestamp: (new Date(r.stakes[i].opening_timestamp).toLocaleString('default')),
           amount: FancyFormatter.QDTAmount(r.stakes[i].staked_amount)+" QDT",
-          block_number: FancyFormatter.blockLink("https://etherscan.io/",r.stakes[i].opening_block),
+          block_number: FancyFormatter.blockLink("https://etherscan.io",r.stakes[i].opening_block),
           tx_hash: FancyFormatter.txLink("https://etherscan.io",r.stakes[i].opening_tx,""),
         }
         this.stakerActivityData.push(o)
