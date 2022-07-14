@@ -126,7 +126,7 @@
             <table class="table table-hover">
               <thead>
                 <tr>
-                  <th scope="col">Date</th>
+                  <th scope="col" class="d-none d-xl-table-cell">Date</th>
                   <th scope="col">Block #</th>
                   <th scope="col">Action</th>
                   <th scope="col">Amount</th>
@@ -135,7 +135,7 @@
               </thead>
               <tbody>
                 <tr v-for="activity in stakerActivityData" :key="activity.block_number">
-                  <td>{{ activity.timestamp }}</td>
+                  <td class="d-none d-xl-table-cell">{{ activity.timestamp }}</td>
                   <td v-html="activity.block_number"></td>
                   <td>{{ activity.action }}</td>
                   <td>{{ activity.amount }}</td>

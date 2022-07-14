@@ -38,6 +38,9 @@
 </template>
 
 <style>
+.navbar-toggler {
+  border: none !important;
+}
 input.input {
     display: block;
     width: 100%;

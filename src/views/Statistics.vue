@@ -90,7 +90,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row d-none d-md-block">
       <div class="col-12">
         <div class="card card-q px-0 py-0">
             <div class="card-body py-4">
@@ -113,7 +113,7 @@
                     <tr v-for="staker in topStakersData" :key="staker.staker_address">
                       <th scope="row">
                         <a :href="`https://etherscan.io/token/0x9adc7710e9d1b29d8a78c04d52d32532297c2ef3?a=${staker.staker_address}`"
-                        target="_blank">
+                        target="_blank" class=" text-break">
                           {{ staker.staker_address }}
                         </a>
                       </th>
