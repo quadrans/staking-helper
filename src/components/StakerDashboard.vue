@@ -77,7 +77,7 @@
             <div class="card-body py-1">
               <div class="row">
                 <div class="col">
-                  <h4>Stake</h4>
+                  <h4 class="card-title">Stake</h4>
                   <p class="mb-0"> The minimum amount of QDT you can stake is <b>10.000 Quadrans Token</b>.</p>
                   <div class="form-inline">
                     <b-input
@@ -94,7 +94,7 @@
                         >STAKE</b-button
                       >
                   </div>
-                  <h4>Estimated rewards</h4>
+                  <h4 class="card-title">Estimated rewards</h4>
                   <p>
                     30 days rewards: <span> {{ oneMonth_est_rewards }}</span> QDT<br/>
                     90 days rewards: <span> {{ threeMonths_est_rewards }}</span> QDT <br/>
@@ -117,7 +117,7 @@
     <div class="col-12">
       <div class="card card-q px-0 pb-0 pt-2">
           <div class="card-body py-4">
-            <h3 class="title mb-2">Activity history</h3>
+            <h4 class="card-title">Activity history</h4>
             <!-- <b-table
               :data="stakerActivityData"
               :columns="TablesConfigs.stakerActivityColumns"
