@@ -102,7 +102,7 @@
                   </p>
                   <div v-if="isStaking">
                     <b-message type="is-info" aria-close-label="Close message">
-                      Please confirm the <b>withdraw transaction</b> and wait until
+                      Please confirm the <b>staking transaction</b> and wait until
                       is confirmed...
                     </b-message>
                   </div>
